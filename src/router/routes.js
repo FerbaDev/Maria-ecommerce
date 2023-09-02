@@ -7,11 +7,11 @@ import { Ordenes } from "../components/pages/ordenes/Ordenes";
 import UserOrders from "../components/pages/userOrders/UserOrders";
 
 export const routes = [
-  {
-    id: "home",
-    path: "/",
-    Element: Home,
-  },
+  // {
+  //   id: "home",
+  //   path: "/",
+  //   Element: Home,
+  // },
   {
     id: "shop",
     path: "/shop",
