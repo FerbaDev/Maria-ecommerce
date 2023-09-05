@@ -9,12 +9,14 @@ import ProtectedAdmin from "./ProtectedAdmin";
 import ProtectedUsers from "./ProtectedUsers";
 import { Ordenes } from "../components/pages/ordenes/Ordenes";
 import Home from "../components/pages/home/Home";
+import ItemListContainer from "../components/pages/itemlist/ItemListContainer";
 
 const AppRouter = () => {
   return (
     <Routes>
       <Route element={<Navbar />}>
         <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<ItemListContainer />} />
       </Route>
       {/* PARA LOS USUARIOS LOGEADOS */}
       <Route element={<ProtectedUsers />}>

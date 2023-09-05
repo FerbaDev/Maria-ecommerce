@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Random Name #1",
+    "description": "Probably the most random thing you have ever seen!",
+    "image": "https://firebasestorage.googleapis.com/v0/b/maria-shoes-app.appspot.com/o/foto1.png?alt=media&token=32c08a76-a16e-4823-a39c-3a42d920a8a7"
+  },
+  {
+    "id": 2,
+    "name": "Random Name #2",
+    "description": "Hello World!",
+    "image": "https://firebasestorage.googleapis.com/v0/b/maria-shoes-app.appspot.com/o/foto2.png?alt=media&token=042ba986-128b-45ed-9555-6ee79cf4a02a"
+  },
+  {
+    "id": 3,
+    "name": "Random Name #3",
+    "description": "Hola Mundo!",
+    "image": "https://firebasestorage.googleapis.com/v0/b/maria-shoes-app.appspot.com/o/foto3.png?alt=media&token=1ea62f7a-f99c-4552-97df-cc250db9874b"
+  },
+  {
+    "id": 4,
+    "name": "Random Name #4",
+    "description": "Bounjour Monde!",
+    "image": "https://firebasestorage.googleapis.com/v0/b/maria-shoes-app.appspot.com/o/foto4.png?alt=media&token=60c059c2-fd44-4786-ae43-30f51cf7d81a"
+  },
+  {
+    "id": 5,
+    "name": "Random Name #5",
+    "description": "Holi munde!",
+    "image": "https://firebasestorage.googleapis.com/v0/b/maria-shoes-app.appspot.com/o/foto5.png?alt=media&token=0ca160f5-ce8d-403a-8f72-769261db5c42"
+  }
+]

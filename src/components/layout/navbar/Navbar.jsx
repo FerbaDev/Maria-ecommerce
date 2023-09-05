@@ -147,7 +147,8 @@ function Navbar(props) {
           width: "100%",
           minHeight: "100vh",
           px: 2,
-          backgroundColor: "#d9d9d9",
+          background:
+            "linear-gradient(190deg, rgba(221,201,233,1) 8%, rgba(226,203,215,1) 38%, rgba(228,231,233,1) 86%);",
         }}
       >
         <Toolbar />
