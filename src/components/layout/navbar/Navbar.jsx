@@ -11,7 +11,7 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { useContext, useState } from "react";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -19,6 +19,7 @@ import { menuItems } from "../../../router/navigation";
 import { logout } from "../../../firebaseConfig";
 import { AuthContext } from "../../../context/AuthContext";
 import DashboardIcon from "@mui/icons-material/Dashboard";
+
 const drawerWidth = 200;
 
 function Navbar(props) {
@@ -92,7 +93,7 @@ function Navbar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", marginBottom: "20px" }}>
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -139,7 +140,7 @@ function Navbar(props) {
           {drawer}
         </Drawer>
       </Box>
-      <Box
+      {/* <Box
         component="main"
         sx={{
           flexGrow: 1,
@@ -152,9 +153,7 @@ function Navbar(props) {
         }}
       >
         <Toolbar />
-
-        <Outlet />
-      </Box>
+      </Box> */}
     </Box>
   );
 }
