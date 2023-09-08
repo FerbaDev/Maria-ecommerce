@@ -19,6 +19,7 @@ import { menuItems } from "../../../router/navigation";
 import { logout } from "../../../firebaseConfig";
 import { AuthContext } from "../../../context/AuthContext";
 import DashboardIcon from "@mui/icons-material/Dashboard";
+import { CartWidget } from "./CartWidget";
 
 const drawerWidth = 200;
 
@@ -108,14 +109,19 @@ function Navbar(props) {
           <Link to="/" style={{ color: "#ffffff", fontFamily: "monospace" }}>
             Maria
           </Link>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-          >
-            <MenuIcon color="inherit" />
-          </IconButton>
+          <Box sx={{ display: "flex", gap: "1em", alignItems: "center" }}>
+            <Link to="/cart">
+              <CartWidget />
+            </Link>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+            >
+              <MenuIcon color="inherit" />
+            </IconButton>
+          </Box>
         </Toolbar>
       </AppBar>
       <Box component="nav" aria-label="mailbox folders">
