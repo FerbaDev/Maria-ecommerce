@@ -2,6 +2,7 @@ import { Button, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Carrusel } from "./Carousel";
 import { Trayectoria } from "./trayectoria/Trayectoria";
+import { Marcas } from "./marcas/Marcas";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       </Container>
       <Carrusel />
       <Trayectoria />
+      <Marcas />
       <Link to={"/shop"}>
         <Button variant="contained">Ir a la tienda</Button>
       </Link>
