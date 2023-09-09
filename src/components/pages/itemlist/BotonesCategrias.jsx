@@ -1,6 +1,6 @@
-import Button from "@mui/material/Button";
-import ButtonGroup from "@mui/material/ButtonGroup";
 import Box from "@mui/material/Box";
+import { menuMarcas } from "../../../router/menuMarcas";
+import { Link } from "react-router-dom";
 
 export const BotonesCategorias = () => {
   return (
@@ -14,11 +14,11 @@ export const BotonesCategorias = () => {
           },
         }}
       >
-        <ButtonGroup variant="text" aria-label="text button group">
-          <Button>Gravagna</Button>
-          <Button>Justa Osadía</Button>
-          <Button>Troncoso</Button>
-        </ButtonGroup>
+        {menuMarcas.map(({ id, path, title }) => {
+          <Link key={id} to={path}>
+            {title}
+          </Link>;
+        })}
       </Box>
     </>
   );

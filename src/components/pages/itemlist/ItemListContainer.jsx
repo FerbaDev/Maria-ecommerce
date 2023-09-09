@@ -1,16 +1,29 @@
 import { useEffect, useState } from "react";
 import { db } from "../../../firebaseConfig";
-import { getDocs, collection } from "firebase/firestore";
-import { Link } from "react-router-dom";
-import { Box, Button, Container } from "@mui/material";
-import { BotonesCategorias } from "./BotonesCategrias";
+import { getDocs, collection, query, where } from "firebase/firestore";
+import { Link, useParams } from "react-router-dom";
+import { Box, Button, Container, CircularProgress } from "@mui/material";
+
+import { menuMarcas } from "../../../router/menuMarcas";
+import { ItemList } from "./ItemList";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
+  const { categoryName } = useParams();
+
   useEffect(() => {
-    let refCollection = collection(db, "products");
-    getDocs(refCollection)
+    let itemsCollection = collection(db, "products");
+
+    let consulta;
+
+    if (categoryName) {
+      consulta = query(itemsCollection, where("category", "==", categoryName));
+    } else {
+      consulta = itemsCollection;
+    }
+
+    getDocs(consulta)
       .then((res) => {
         let newArray = res.docs.map((product) => {
           return { ...product.data(), id: product.id };
@@ -19,54 +32,29 @@ const ItemListContainer = () => {
         setProducts(newArray);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [categoryName]);
+
+  if (products.length === 0) {
+    return (
+      <Box
+        sx={{
+          minHeight: "75vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <CircularProgress />
+      </Box>
+    );
+  }
 
   return (
     <div>
-      <h1 style={{ padding: "20px" }}>Estoy en el shop</h1>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <BotonesCategorias />
-      </Box>
-      <Container sx={{ display: "flex", justifyContent: "center" }}>
-        {products.map((product) => {
-          return (
-            <div
-              key={product.id}
-              style={{
-                maxWidth: "345px",
-                paddingBottom: "5px",
-                borderRadius: "10px",
-              }}
-            >
-              <img
-                src={product.image}
-                style={{ width: "100%", borderRadius: "10px 10px 0 0" }}
-                alt={product.title}
-              />
-              <div style={{ backgroundColor: "rgba(255, 255, 255, 0.3)" }}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                    padding: "10px",
-                    marginTop: "-10px",
-                  }}
-                >
-                  <h4>{product.title}</h4>
-                  <h4>Precio: ${product.unit_price}</h4>
-                  <h4>Stock: {product.stock}</h4>
-                </Box>
-                <Link to={`/itemDetail/${product.id}`}>
-                  <Button variant="contained" sx={{ margin: "10px" }}>
-                    Ver detalle
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          );
-        })}
-      </Container>
+      <h1 style={{ padding: "20px", backgroundColor: "red" }}>
+        Estoy en el shop
+      </h1>
+      <ItemList products={products} />
     </div>
   );
 };
