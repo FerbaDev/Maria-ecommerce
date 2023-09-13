@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { db } from "../../../firebaseConfig";
 import { getDoc, collection, doc } from "firebase/firestore";
 import { Button } from "@mui/material";
@@ -11,6 +11,7 @@ const ItemDetail = () => {
   let quantity = getQuantityById(id);
   const [product, setProduct] = useState(null);
   const [counter, setCounter] = useState(quantity || 1);
+  const [isAdd, setIsAdd] = useState(false);
 
   useEffect(() => {
     let refCollection = collection(db, "products");
@@ -63,15 +64,37 @@ const ItemDetail = () => {
         <h6>Ya tienes el maximo en el carrito</h6>
       )}
       <div style={{ display: "flex" }}>
-        <Button variant="contained" onClick={addOne}>
-          +
-        </Button>
-        <h4>{counter}</h4>
-        <Button variant="contained" onClick={subOne}>
-          -
-        </Button>
+        {isAdd ? (
+          <>
+            <Link to={"/cart"}>
+              <Button variant="contained" color="success">
+                Ir al carrito
+              </Button>
+            </Link>
+            <Link to={"/shop"}>
+              <Button variant="contained">Seguir comprando</Button>
+            </Link>
+          </>
+        ) : (
+          <>
+            <Button variant="contained" onClick={addOne}>
+              +
+            </Button>
+            <h4>{counter}</h4>
+            <Button variant="contained" onClick={subOne}>
+              -
+            </Button>
+            <Button
+              onClick={(quantity) => {
+                onAdd(quantity);
+                setIsAdd(true);
+              }}
+            >
+              Agregar al carrito
+            </Button>
+          </>
+        )}
       </div>
-      <Button onClick={onAdd}>Agregar al carrito</Button>
     </div>
   );
 };
