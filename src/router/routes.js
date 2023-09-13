@@ -47,4 +47,9 @@ export const routes = [
     path: "/category/:categoryName",
     Element: ItemListContainer,
   },
+  {
+    id: "marca",
+    path: "/marca/:brandName",
+    Element: ItemListContainer,
+  },
 ];

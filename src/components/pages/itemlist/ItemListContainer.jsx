@@ -13,11 +13,12 @@ import {
 import { ItemList } from "./ItemList";
 
 import { menuCategorias } from "../../../router/menuCategorias";
+import { menuMarcas } from "../../../router/menuMarcas";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
-  const { categoryName } = useParams();
+  const { categoryName, brandName } = useParams();
 
   useEffect(() => {
     let itemsCollection = collection(db, "products");
@@ -26,6 +27,8 @@ const ItemListContainer = () => {
 
     if (categoryName) {
       consulta = query(itemsCollection, where("category", "==", categoryName));
+    } else if (brandName) {
+      consulta = query(itemsCollection, where("marca", "==", brandName));
     } else {
       consulta = itemsCollection;
     }
@@ -39,7 +42,7 @@ const ItemListContainer = () => {
         setProducts(newArray);
       })
       .catch((err) => console.log(err));
-  }, [categoryName]);
+  }, [categoryName, brandName]);
 
   if (products.length === 0) {
     return (
@@ -65,11 +68,22 @@ const ItemListContainer = () => {
         <ButtonGroup
           variant="text"
           aria-label="text button group"
-          fullWidth="true"
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            maxWidth: "100%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
           {menuCategorias.map(({ id, path, title }) => (
             <Button key={id}>
               <Link to={path}>{title}</Link>
+            </Button>
+          ))}
+          {menuMarcas.map((marca) => (
+            <Button key={marca.id}>
+              <Link to={marca.path}>{marca.title}</Link>
             </Button>
           ))}
         </ButtonGroup>

@@ -17,6 +17,7 @@ const ProductsForm = ({
     stock: 0,
     category: "",
     image: "",
+    marca: "",
   });
   const [file, setFile] = useState(null);
 
@@ -116,6 +117,13 @@ const ProductsForm = ({
           defaultValue={productSelected?.category}
           label="categoria"
           name="category"
+          onChange={handleChange}
+        />
+        <TextField
+          variant="outlined"
+          defaultValue={productSelected?.marca}
+          label="marca"
+          name="marca"
           onChange={handleChange}
         />
         <TextField type="file" onChange={(e) => setFile(e.target.files[0])} />

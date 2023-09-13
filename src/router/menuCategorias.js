@@ -10,12 +10,12 @@ export const menuCategorias = [
     title: "Zapatos",
   },
   {
-    id: "justaosadia",
+    id: "zapatillas",
     path: "/category/zapatillas",
     title: "Zapatillas",
   },
   {
-    id: "troncoso",
+    id: "botas",
     path: "/category/botas",
     title: "Botas",
   },
