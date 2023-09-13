@@ -2,10 +2,17 @@ import { useEffect, useState } from "react";
 import { db } from "../../../firebaseConfig";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { Link, useParams } from "react-router-dom";
-import { Box, Button, Container, CircularProgress } from "@mui/material";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  CircularProgress,
+  Typography,
+} from "@mui/material";
+
+import { ItemList } from "./ItemList";
 
 import { menuMarcas } from "../../../router/menuMarcas";
-import { ItemList } from "./ItemList";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -50,12 +57,19 @@ const ItemListContainer = () => {
   }
 
   return (
-    <div>
-      <h1 style={{ padding: "20px", backgroundColor: "red" }}>
-        Estoy en el shop
-      </h1>
+    <Box>
+      <Typography>Estoy en el shop</Typography>
+      <Box>
+        <ButtonGroup variant="text" aria-label="text button group">
+          {menuMarcas.map(({ id, path, title }) => (
+            <Button key={id}>
+              <Link to={path}>{title}</Link>
+            </Button>
+          ))}
+        </ButtonGroup>
+      </Box>
       <ItemList products={products} />
-    </div>
+    </Box>
   );
 };
 

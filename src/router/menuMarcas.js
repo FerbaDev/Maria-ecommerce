@@ -1,7 +1,12 @@
 export const menuMarcas = [
   {
+    id: "shop",
+    path: "/shop",
+    title: "Todo",
+  },
+  {
     id: "zapatos",
-    path: "/category/zapatos",
+    path: "/category/gravagna",
     title: "Gravagna",
   },
   {
