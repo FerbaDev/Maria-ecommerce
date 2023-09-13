@@ -3,18 +3,21 @@
     "id": 1,
     "nombre": "Gravagna",
     "img": "https://www.gravagna.com.ar/wp-content/uploads/2020/10/logo-gravagna.png",
-    "descripcion": ""
+    "descripcion": "",
+    "path": "/marca/gravagna"
   },
   {
     "id": 2,
     "nombre": "Justa Osadia",
     "img": "https://justaosadia.com/cdn/shop/files/jst_3673d74d-d29e-430d-adbc-be407c348339.png?v=1679579072&width=340",
-    "descripcion": ""
+    "descripcion": "",
+    "path": "/marca/justaosadia"
   },
   {
     "id": 3,
     "nombre": "Troncoso",
     "img": "",
-    "descripcion": ""
+    "descripcion": "",
+    "path": "/marca/troncoso"
   }
 ]
