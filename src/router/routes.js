@@ -43,7 +43,7 @@ export const routes = [
     Element: Ordenes,
   },
   {
-    id: "marcas",
+    id: "categoria",
     path: "/category/:categoryName",
     Element: ItemListContainer,
   },

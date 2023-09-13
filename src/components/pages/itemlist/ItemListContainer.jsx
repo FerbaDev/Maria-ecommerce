@@ -12,7 +12,7 @@ import {
 
 import { ItemList } from "./ItemList";
 
-import { menuMarcas } from "../../../router/menuMarcas";
+import { menuCategorias } from "../../../router/menuCategorias";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -57,11 +57,17 @@ const ItemListContainer = () => {
   }
 
   return (
-    <Box>
-      <Typography>Estoy en el shop</Typography>
+    <Box sx={{ paddingBlock: "20px" }}>
+      <Typography variant="h3" align="center">
+        Tienda
+      </Typography>
       <Box>
-        <ButtonGroup variant="text" aria-label="text button group">
-          {menuMarcas.map(({ id, path, title }) => (
+        <ButtonGroup
+          variant="text"
+          aria-label="text button group"
+          fullWidth="true"
+        >
+          {menuCategorias.map(({ id, path, title }) => (
             <Button key={id}>
               <Link to={path}>{title}</Link>
             </Button>
