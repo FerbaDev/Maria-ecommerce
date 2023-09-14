@@ -5,7 +5,7 @@ export const Footer = () => {
     <div
       style={{
         minHeight: "100px",
-        backgroundColor: "rgba(221,201,233,1)",
+        backgroundColor: "#C43539",
         display: "flex",
         alignItems: "end",
         justifyContent: "end",

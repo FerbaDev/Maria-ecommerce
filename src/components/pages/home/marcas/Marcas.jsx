@@ -5,7 +5,7 @@ import marcas from "./marcas.json";
 export const Marcas = () => {
   return (
     <div>
-      <h2>Nuestras marcas</h2>
+      <h2 className="bebas">Nuestras marcas</h2>
       <Box
         sx={{
           display: "flex",

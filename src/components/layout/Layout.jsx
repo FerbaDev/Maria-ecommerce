@@ -14,8 +14,7 @@ export const Layout = () => {
           width: "100%",
           minHeight: "90vh",
           px: 2,
-          background:
-            "linear-gradient(190deg, rgba(221,201,233,1) 8%, rgba(226,203,215,1) 38%, rgba(228,231,233,1) 86%);",
+          background: "#F5D1E0",
         }}
       >
         <Outlet />
