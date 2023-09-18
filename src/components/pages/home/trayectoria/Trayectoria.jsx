@@ -6,7 +6,13 @@ import Typography from "@mui/material/Typography";
 
 export const Trayectoria = () => {
   return (
-    <Box sx={{ paddingBlock: "50px", backgroundColor: "#F2B0CF" }}>
+    <Box
+      sx={{
+        paddingInline: "20px",
+        paddingBlock: "50px",
+        backgroundColor: "#F2B0CF",
+      }}
+    >
       <Card sx={{ maxWidth: "100%" }}>
         <CardMedia
           sx={{ height: 250 }}
@@ -28,10 +34,10 @@ export const Trayectoria = () => {
             sx={{ fontFamily: "'Montserrat', sans-serif;", fontWeight: "bold" }}
             paragraph="true"
           >
-            En María, nuestra historia se teje con hilos de pasión por los
+            En María, nuestra historia se entreteje con la pasión por los
             zapatos y un compromiso inquebrantable con la calidad. Hace más de
-            dos décadas, abrimos nuestras puertas para compartir nuestra pasión
-            con el mundo.
+            dos décadas, abrimos nuestras puertas para compartir esta pasión con
+            mujeres como vos.
           </Typography>
           <Typography
             variant="body"
@@ -39,10 +45,10 @@ export const Trayectoria = () => {
             paragraph="true"
             sx={{ fontFamily: "'Montserrat', sans-serif;", fontWeight: "bold" }}
           >
-            María, la fundadora y alma de nuestra tienda, proviene de una
+            María, la fundadora y corazón de nuestra tienda, proviene de una
             familia con un legado en la moda y los zapatos. Desde temprana edad,
-            su vida estuvo inmersa en la industria, y su amor por los zapatos es
-            innegable.
+            su vida estuvo inmersa en esta industria, y su amor por los zapatos
+            es innegable.
           </Typography>
           <Typography
             variant="body"

@@ -6,16 +6,20 @@ import { Marcas } from "./marcas/Marcas";
 
 const Home = () => {
   return (
-    <Box sx={{ backgroundColor: "#F5D1E0" }}>
+    <Box>
       <Container>
-        <h1 className="bebas">Bienvenidas!</h1>
+        <h1 className="bebas" style={{ fontSize: "50px" }}>
+          Bienvenidas!
+        </h1>
       </Container>
       <Carrusel />
       <Trayectoria />
       <Marcas />
-      <Link to={"/shop"}>
-        <Button variant="contained">Ir a la tienda</Button>
-      </Link>
+      <Box sx={{ padding: "20px" }}>
+        <Link to={"/shop"}>
+          <Button variant="contained">Ir a la tienda</Button>
+        </Link>
+      </Box>
     </Box>
   );
 };

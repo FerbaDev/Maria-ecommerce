@@ -4,7 +4,7 @@ import items from "./slides.json";
 
 export const Carrusel = () => {
   return (
-    <Carousel>
+    <Carousel sx={{ padding: "20px" }}>
       {items.map((item) => (
         <Item key={item.id} item={item} />
       ))}

@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
@@ -13,7 +14,9 @@ export const Footer = () => {
     >
       <h4 style={{ padding: "10px" }}>
         <Link to={"https://talba-labs.vercel.app/"}>
-          Tienda creada por Talba Labs
+          <Typography sx={{ fontFamily: "monospace" }}>
+            Tienda creada por Talba Labs
+          </Typography>
         </Link>
       </h4>
     </div>

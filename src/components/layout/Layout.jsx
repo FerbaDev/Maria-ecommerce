@@ -10,10 +10,10 @@ export const Layout = () => {
       <Box
         sx={{
           flexGrow: 1,
-          py: 4,
+          paddingTop: "50px",
           width: "100%",
           minHeight: "90vh",
-          px: 2,
+
           background: "#F5D1E0",
         }}
       >
