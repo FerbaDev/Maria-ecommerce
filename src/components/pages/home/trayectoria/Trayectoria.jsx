@@ -27,10 +27,25 @@ export const Trayectoria = () => {
             color="text.secondary"
             sx={{ fontFamily: "'Montserrat', sans-serif;", fontWeight: "bold" }}
           >
-            A paragraph of placeholder text. We are using it here to show the
-            use of the clearfix class. We are adding quite a few meaningless
-            phrases here to demonstrate how the columns interact here with the
-            floated image.
+            En María, nuestra historia se teje con hilos de pasión por los
+            zapatos y un compromiso inquebrantable con la calidad. Hace más de
+            dos décadas, abrimos nuestras puertas para compartir nuestra pasión
+            con el mundo. María, la fundadora y alma de nuestra tienda, proviene
+            de una familia con un legado en la moda y los zapatos. Desde
+            temprana edad, su vida estuvo inmersa en la industria, y su amor por
+            los zapatos es innegable. Lo que realmente la distingue es su
+            conexión única con cada una de nuestras queridas clientas. A lo
+            largo de los años, ha formado amistades, conociendo sus gustos y
+            necesidades, y creando una experiencia de compra personalizada que
+            va más allá de un simple par de zapatos. Nuestra relación con los
+            proveedores es tan sólida como nuestros zapatos. Trabajamos con
+            personas que, como nosotros, valoran la calidad y la atención al
+            detalle. Conocemos a cada proveedor personalmente, lo que nos
+            permite seleccionar materiales de primera calidad y garantizar
+            costuras precisas y terminaciones impecables. Gracias por confiar en
+            nosotros durante estos 21 años. Esperamos continuar caminando a tu
+            lado, brindándote calidad, estilo y, sobre todo, una experiencia que
+            valga la pena.
           </Typography>
         </CardContent>
       </Card>
