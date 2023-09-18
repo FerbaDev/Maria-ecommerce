@@ -26,26 +26,57 @@ export const Trayectoria = () => {
             variant="body"
             color="text.secondary"
             sx={{ fontFamily: "'Montserrat', sans-serif;", fontWeight: "bold" }}
+            paragraph="true"
           >
             En María, nuestra historia se teje con hilos de pasión por los
             zapatos y un compromiso inquebrantable con la calidad. Hace más de
             dos décadas, abrimos nuestras puertas para compartir nuestra pasión
-            con el mundo. María, la fundadora y alma de nuestra tienda, proviene
-            de una familia con un legado en la moda y los zapatos. Desde
-            temprana edad, su vida estuvo inmersa en la industria, y su amor por
-            los zapatos es innegable. Lo que realmente la distingue es su
-            conexión única con cada una de nuestras queridas clientas. A lo
-            largo de los años, ha formado amistades, conociendo sus gustos y
-            necesidades, y creando una experiencia de compra personalizada que
-            va más allá de un simple par de zapatos. Nuestra relación con los
-            proveedores es tan sólida como nuestros zapatos. Trabajamos con
-            personas que, como nosotros, valoran la calidad y la atención al
-            detalle. Conocemos a cada proveedor personalmente, lo que nos
-            permite seleccionar materiales de primera calidad y garantizar
-            costuras precisas y terminaciones impecables. Gracias por confiar en
-            nosotros durante estos 21 años. Esperamos continuar caminando a tu
-            lado, brindándote calidad, estilo y, sobre todo, una experiencia que
-            valga la pena.
+            con el mundo.
+          </Typography>
+          <Typography
+            variant="body"
+            color="text.secondary"
+            paragraph="true"
+            sx={{ fontFamily: "'Montserrat', sans-serif;", fontWeight: "bold" }}
+          >
+            María, la fundadora y alma de nuestra tienda, proviene de una
+            familia con un legado en la moda y los zapatos. Desde temprana edad,
+            su vida estuvo inmersa en la industria, y su amor por los zapatos es
+            innegable.
+          </Typography>
+          <Typography
+            variant="body"
+            color="text.secondary"
+            paragraph="true"
+            sx={{ fontFamily: "'Montserrat', sans-serif;", fontWeight: "bold" }}
+          >
+            Lo que realmente la distingue es su conexión única con cada una de
+            nuestras queridas clientas. A lo largo de los años, ha formado
+            amistades, conociendo sus gustos y necesidades, y creando una
+            experiencia de compra personalizada que va más allá de un simple par
+            de zapatos.
+          </Typography>
+          <Typography
+            variant="body"
+            color="text.secondary"
+            paragraph="true"
+            sx={{ fontFamily: "'Montserrat', sans-serif;", fontWeight: "bold" }}
+          >
+            Nuestra relación con los proveedores es tan sólida como nuestros
+            zapatos. Trabajamos con personas que, como nosotros, valoran la
+            calidad y la atención al detalle. Conocemos a cada proveedor
+            personalmente, lo que nos permite seleccionar materiales de primera
+            calidad y garantizar costuras precisas y terminaciones impecables.
+          </Typography>
+          <Typography
+            variant="body"
+            color="text.secondary"
+            paragraph="true"
+            sx={{ fontFamily: "'Montserrat', sans-serif;", fontWeight: "bold" }}
+          >
+            Gracias por confiar en nosotros durante estos 21 años. Esperamos
+            continuar caminando a tu lado, brindándote calidad, estilo y, sobre
+            todo, una experiencia que valga la pena.
           </Typography>
         </CardContent>
       </Card>
