@@ -10,8 +10,10 @@ const Cart = () => {
   let total = getTotalPrice();
 
   return (
-    <div style={{}}>
-      <h1 className="bebas">Carrito de compras</h1>
+    <div>
+      <h1 className="bebas" style={{ paddingLeft: "20px" }}>
+        Carrito de compras
+      </h1>
       <Box
         sx={{
           backgroundColor: "#F2B0CF",
@@ -37,11 +39,26 @@ const Cart = () => {
           );
         })}
       </Box>
-      {cart.length > 0 && <button onClick={clearCart}>Limpiar carrito</button>}
-      {cart.length > 0 && <h3>El total a pagar es ${total}</h3>}
-      {cart.length == 0 && <h3>El carrito está vacío</h3>}
       {cart.length > 0 && (
-        <Link to="/checkout" style={{ color: "steelblue" }}>
+        <div style={{ paddingLeft: "20px" }}>
+          <button onClick={clearCart}>Limpiar carrito</button>
+          <h3>El total a pagar es ${total}</h3>
+        </div>
+      )}
+
+      {cart.length == 0 && (
+        <div style={{ paddingLeft: "20px" }}>
+          <h3>El carrito está vacío</h3>
+          <Link to={"/shop"}>
+            <Button variant="contained">Ir a la tienda</Button>
+          </Link>
+        </div>
+      )}
+      {cart.length > 0 && (
+        <Link
+          to="/checkout"
+          style={{ color: "steelblue", paddingLeft: "20px" }}
+        >
           <Button variant="contained">Finalizar compra</Button>
         </Link>
       )}

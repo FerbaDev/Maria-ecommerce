@@ -27,9 +27,9 @@ export const ItemCard = ({ product }) => {
               marginTop: "-10px",
             }}
           >
-            <h4>{product.title}</h4>
-            <h4>Precio: ${product.unit_price}</h4>
-            <h4>Stock: {product.stock}</h4>
+            <h4 className="montserrat">{product.title}</h4>
+            <h4 className="montserrat">Precio: ${product.unit_price}</h4>
+            <h4 className="montserrat">Stock: {product.stock}</h4>
           </Box>
           <Link to={`/itemDetail/${product.id}`}>
             <Button variant="contained" sx={{ margin: "10px" }}>

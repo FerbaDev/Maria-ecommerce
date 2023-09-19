@@ -31,13 +31,27 @@ const ItemDetail = () => {
   };
 
   return (
-    <div>
-      <h1>detalle</h1>
+    <div style={{ paddingLeft: "20px" }}>
+      <h1 className="bebas">Detalle</h1>
 
       {product && (
-        <div>
-          <h2>{product.title}</h2>
-          <img src={product.image} style={{ width: "200px" }} alt="" />
+        <div
+          style={{
+            padding: "20px",
+            backgroundColor: "pink",
+            width: "80%",
+            borderRadius: "16px",
+          }}
+        >
+          <h2 className="montserrat" style={{ textDecoration: "underline" }}>
+            {product.title}
+          </h2>
+          <img
+            src={product.image}
+            style={{ width: "200px", paddingBlock: "10px" }}
+            alt=""
+          />
+          <p className="montserrat">Precio: ${product.unit_price}</p>
         </div>
       )}
       {quantity && <h6>Ya tienes {quantity} en el carrito</h6>}
@@ -63,6 +77,7 @@ const ItemDetail = () => {
                 onAdd(quantity);
                 setIsAdd(true);
               }}
+              variant="contained"
             >
               Agregar al carrito
             </Button>
