@@ -15,7 +15,6 @@ export const Layout = () => {
           minHeight: "90vh",
 
           background: "#F5D1E0",
-          filter: "brightness(0.8)",
         }}
       >
         <Outlet />

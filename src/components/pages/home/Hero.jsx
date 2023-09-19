@@ -11,12 +11,27 @@ export const Hero = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "column",
+        justifyContent: "space-evenly",
         alignItems: "center",
       }}
     >
+      <h1
+        style={{
+          color: "white",
+          fontSize: "3.5em",
+          textAlign: "center",
+          backgroundColor: "rgba(135, 4, 71, 0.3)",
+          width: "100%",
+        }}
+        className="bebas"
+      >
+        Con el confort en mente
+      </h1>
       <Link to={"/shop"}>
-        <Button variant="contained">Ver más</Button>
+        <Button variant="contained" color="secondary">
+          Ver más
+        </Button>
       </Link>
     </Box>
   );
