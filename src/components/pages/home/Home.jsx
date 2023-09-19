@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Carrusel } from "./Carousel";
 import { Trayectoria } from "./trayectoria/Trayectoria";
 import { Marcas } from "./marcas/Marcas";
+import { SeccionCatalogo } from "./seccionCatalogo/SeccionCatalogo";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         </h1>
       </Container>
       <Carrusel />
+      <SeccionCatalogo />
       <Trayectoria />
       <Marcas />
       <Box sx={{ padding: "20px" }}>
