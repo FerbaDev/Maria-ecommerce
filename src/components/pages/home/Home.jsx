@@ -4,16 +4,14 @@ import { Carrusel } from "./Carousel";
 import { Trayectoria } from "./trayectoria/Trayectoria";
 import { Marcas } from "./marcas/Marcas";
 import { SeccionCatalogo } from "./seccionCatalogo/SeccionCatalogo";
+import { Hero } from "./Hero";
 
 const Home = () => {
   return (
     <Box>
-      <Container>
-        <h1 className="bebas" style={{ fontSize: "50px" }}>
-          Bienvenidas!
-        </h1>
-      </Container>
-      <Carrusel />
+      <Hero />
+
+      {/* <Carrusel />
       <SeccionCatalogo />
       <Trayectoria />
       <Marcas />
@@ -21,7 +19,7 @@ const Home = () => {
         <Link to={"/shop"}>
           <Button variant="contained">Ir a la tienda</Button>
         </Link>
-      </Box>
+      </Box> */}
     </Box>
   );
 };
