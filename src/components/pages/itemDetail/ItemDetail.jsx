@@ -10,7 +10,6 @@ const ItemDetail = () => {
   const { addToCart, getQuantityById } = useContext(CartContext);
   let quantity = getQuantityById(id);
   const [product, setProduct] = useState(null);
-  const [counter, setCounter] = useState(quantity || 1);
   const [isAdd, setIsAdd] = useState(false);
 
   useEffect(() => {
@@ -21,30 +20,12 @@ const ItemDetail = () => {
       .catch((error) => console.log(error));
   }, [id]);
 
-  // SUMAR
-  const addOne = () => {
-    if (counter < product.stock) {
-      setCounter(counter + 1);
-    } else {
-      alert("stock maximo");
-    }
-  };
-
-  // RESTAR
-
-  const subOne = () => {
-    if (counter > 1) {
-      setCounter(counter - 1);
-    } else {
-      alert("no podes agregar menos de 1 elemento al carrito");
-    }
-  };
   // AGREGAR AL CARRITO
 
   const onAdd = () => {
     let obj = {
       ...product,
-      quantity: counter,
+      quantity: 1,
     };
     addToCart(obj);
   };
@@ -77,13 +58,6 @@ const ItemDetail = () => {
           </>
         ) : (
           <>
-            <Button variant="contained" onClick={addOne}>
-              +
-            </Button>
-            <h4>{counter}</h4>
-            <Button variant="contained" onClick={subOne}>
-              -
-            </Button>
             <Button
               onClick={(quantity) => {
                 onAdd(quantity);

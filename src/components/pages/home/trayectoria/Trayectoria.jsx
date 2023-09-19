@@ -32,7 +32,7 @@ export const Trayectoria = () => {
             variant="body"
             color="text.secondary"
             sx={{ fontFamily: "'Montserrat', sans-serif;", fontWeight: "bold" }}
-            paragraph="true"
+            paragraph
           >
             En María, nuestra historia se entreteje con la pasión por los
             zapatos y un compromiso inquebrantable con la calidad. Hace más de
@@ -42,7 +42,7 @@ export const Trayectoria = () => {
           <Typography
             variant="body"
             color="text.secondary"
-            paragraph="true"
+            paragraph
             sx={{ fontFamily: "'Montserrat', sans-serif;", fontWeight: "bold" }}
           >
             María, la fundadora y corazón de nuestra tienda, proviene de una
@@ -53,7 +53,7 @@ export const Trayectoria = () => {
           <Typography
             variant="body"
             color="text.secondary"
-            paragraph="true"
+            paragraph
             sx={{ fontFamily: "'Montserrat', sans-serif;", fontWeight: "bold" }}
           >
             Lo que realmente la distingue es su conexión única con cada una de
@@ -65,7 +65,7 @@ export const Trayectoria = () => {
           <Typography
             variant="body"
             color="text.secondary"
-            paragraph="true"
+            paragraph
             sx={{ fontFamily: "'Montserrat', sans-serif;", fontWeight: "bold" }}
           >
             Nuestra relación con los proveedores es tan sólida como nuestros
@@ -77,7 +77,7 @@ export const Trayectoria = () => {
           <Typography
             variant="body"
             color="text.secondary"
-            paragraph="true"
+            paragraph
             sx={{ fontFamily: "'Montserrat', sans-serif;", fontWeight: "bold" }}
           >
             Gracias por confiar en nosotros durante estos 21 años. Esperamos
