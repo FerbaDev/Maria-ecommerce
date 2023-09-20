@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <Box
       sx={{
-        height: "95vh",
+        height: "90vh",
         width: "100%",
         backgroundImage: `url("https://justaosadia.com/cdn/shop/files/JST15064.png?v=1692981099&width=800")`,
         backgroundPosition: "center",

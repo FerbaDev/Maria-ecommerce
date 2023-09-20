@@ -7,7 +7,7 @@ export const Marcas = () => {
     <Box sx={{ padding: "20px" }}>
       <Box sx={{ paddingBottom: "30px" }}>
         <h2 className="bebas titulos-medios">Nuestras marcas</h2>
-        <p className="montserrat">
+        <p className="montserrat" style={{ fontWeight: "bold" }}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni ad
           fugiat iure temporibus rerum fuga modi sit dolores explicabo soluta
           assumenda, recusandae, eius minus similique aspernatur labore in. At
