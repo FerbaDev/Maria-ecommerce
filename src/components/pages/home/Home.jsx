@@ -15,11 +15,8 @@ const Home = () => {
       {/* <SeccionCatalogo /> */}
       <Trayectoria />
       <Marcas />
-      <Box sx={{ padding: "20px" }}>
-        <Link to={"/shop"}>
-          <Button variant="contained">Ir a la tienda</Button>
-        </Link>
-      </Box>
+      <SeccionCatalogo />
+      <Carrusel />
     </Box>
   );
 };
