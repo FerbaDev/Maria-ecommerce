@@ -8,11 +8,9 @@ export const Marcas = () => {
       <Box sx={{ paddingBottom: "30px" }}>
         <h2 className="bebas titulos-medios">Nuestras marcas</h2>
         <p className="montserrat" style={{ fontWeight: "bold" }}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni ad
-          fugiat iure temporibus rerum fuga modi sit dolores explicabo soluta
-          assumenda, recusandae, eius minus similique aspernatur labore in. At
-          magni nemo ipsum repudiandae quaerat facere amet recusandae deleniti.
-          Eligendi, libero vitae!
+          Descubre la elegancia y calidad de Gravagna, la innovación de Justa
+          Osadía y el estilo único de Troncoso. Tres icónicas marcas de zapatos
+          de mujer, orgullosamente fabricadas en Argentina.
         </p>
       </Box>
       <Box

@@ -30,7 +30,7 @@ export const Hero = () => {
       </h1>
       <Link to={"/shop"}>
         <Button variant="contained" color="secondary">
-          Ver más
+          Ver tienda
         </Button>
       </Link>
     </Box>
