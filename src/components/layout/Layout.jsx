@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { Footer } from "./footer/Footer";
 import Navbar from "./navbar/Navbar";
 import { Box } from "@mui/material";
@@ -14,22 +14,13 @@ export const Layout = () => {
           paddingTop: "30px",
           width: "100%",
           minHeight: "90vh",
-
           background: "#F5D1E0",
         }}
       >
         <Outlet />
-        <InstagramIcon
-          sx={{
-            position: "fixed",
-            right: "20px",
-            bottom: "20px",
-            zIndex: "10",
-            height: "2em",
-            width: "auto",
-            color: "fuchsia",
-          }}
-        />
+        <Link to={"https://www.instagram.com/mariashoesclothes/"}>
+          <InstagramIcon className="instagram" />
+        </Link>
       </Box>
       <Footer />
     </div>
