@@ -19,7 +19,16 @@ export const Layout = () => {
       >
         <Outlet />
         <Link to={"https://www.instagram.com/mariashoesclothes/"}>
-          <InstagramIcon className="instagram" />
+          <InstagramIcon
+            sx={{
+              position: "fixed",
+              right: "20px",
+              bottom: "20px",
+              height: "1.5em",
+              width: "auto",
+            }}
+            className="instagram"
+          />
         </Link>
       </Box>
       <Footer />
