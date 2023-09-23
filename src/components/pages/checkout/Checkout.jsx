@@ -14,6 +14,9 @@ import {
   serverTimestamp,
   getDoc,
 } from "firebase/firestore";
+import ReactWhatsapp from "react-whatsapp";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+
 const Checkout = () => {
   const { cart, getTotalPrice, clearCart } = useContext(CartContext);
   const { user } = useContext(AuthContext);
@@ -128,9 +131,18 @@ const Checkout = () => {
         </>
       ) : (
         <>
-          <h4>El pago se realizo con exito</h4>
-          <h4>Su numero de compra es {orderId}</h4>
+          <h4>El pago se realizó con éxito</h4>
+          <h4>Su número de compra es {orderId}</h4>
           <Link to="/shop">Seguir comprando</Link>
+          <ReactWhatsapp
+            number="549-3571-57-3266"
+            message="Hello World!!!"
+            element="button"
+            className="whatsapp"
+          >
+            <WhatsAppIcon />
+            Whatsapp
+          </ReactWhatsapp>
         </>
       )}
 

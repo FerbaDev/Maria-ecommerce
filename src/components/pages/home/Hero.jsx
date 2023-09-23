@@ -1,5 +1,7 @@
 import { Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import ReactWhatsapp from "react-whatsapp";
 
 export const Hero = () => {
   return (
@@ -33,6 +35,15 @@ export const Hero = () => {
           Ver tienda
         </Button>
       </Link>
+      <ReactWhatsapp
+        number="549-3571-57-3266"
+        message="Hello World!!!"
+        element="button"
+        className="whatsapp"
+      >
+        <WhatsAppIcon />
+        Whatsapp
+      </ReactWhatsapp>
     </Box>
   );
 };
