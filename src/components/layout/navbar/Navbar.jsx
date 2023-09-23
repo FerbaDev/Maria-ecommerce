@@ -14,9 +14,9 @@ import Toolbar from "@mui/material/Toolbar";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { useContext, useState } from "react";
-import LogoutIcon from "@mui/icons-material/Logout";
+
 import { menuItems } from "../../../router/navigation";
-import { logout } from "../../../firebaseConfig";
+
 import { AuthContext } from "../../../context/AuthContext";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import { CartWidget } from "./CartWidget";
@@ -24,21 +24,21 @@ import { CartWidget } from "./CartWidget";
 const drawerWidth = 200;
 
 function Navbar(props) {
-  const { logoutContext, user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
-  const navigate = useNavigate();
+
   const rolAdmin = import.meta.env.VITE_ROL_ADMIN;
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  const handleLogout = () => {
-    logout();
-    logoutContext();
-    navigate("/login");
-  };
+  // const handleLogout = () => {
+  //   logout();
+  //   logoutContext();
+  //   navigate("/login");
+  // };
 
   const drawer = (
     <div>
@@ -106,7 +106,7 @@ function Navbar(props) {
         <Toolbar
           sx={{ gap: "20px", display: "flex", justifyContent: "space-between" }}
         >
-          <Link to="/" style={{ color: "#ffffff", fontFamily: "monospace" }}>
+          <Link to="/" className="logo">
             Maria
           </Link>
           <Box sx={{ display: "flex", gap: "1em", alignItems: "center" }}>
