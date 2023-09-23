@@ -75,7 +75,7 @@ function Navbar(props) {
             </ListItem>
           </Link>
         )}
-        <ListItem disablePadding>
+        {/* <ListItem disablePadding>
           <ListItemButton onClick={handleLogout}>
             <ListItemIcon>
               <LogoutIcon sx={{ color: "whitesmoke" }} />
@@ -85,7 +85,7 @@ function Navbar(props) {
               sx={{ color: "whitesmoke" }}
             />
           </ListItemButton>
-        </ListItem>
+        </ListItem> */}
       </List>
     </div>
   );
