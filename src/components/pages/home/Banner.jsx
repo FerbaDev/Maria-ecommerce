@@ -13,7 +13,7 @@ export const Banner = () => {
         placeItems: "center",
       }}
     >
-      <h2 className="bebas">Aca va algo escrito</h2>
+      <h2 className="bebas">Calidad que se siente bien</h2>
     </Box>
   );
 };

@@ -41,3 +41,39 @@
   gap: 10px;
   text-shadow: 2px 2px 4px #2bb741;
 }
+
+button {
+  padding: 5px;
+  border-radius: 3px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  background-color: rgb(253, 212, 253);
+  border: 1px solid rgb(249, 184, 249);
+}
+button:hover {
+  background-color: rgb(250, 187, 250);
+}
+
+/******** CARRITO   **********/
+
+.card-producto {
+  padding: 10px;
+  border: 1px solid rgb(255, 0, 255);
+  width: 80%;
+  display: flex;
+  gap: 1em;
+  margin-block: 10px;
+  box-shadow: 1px 1px 4px -2px rgba(0, 0, 0, 0.75);
+}
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.summary {
+  padding: 20px;
+}
+.summary-data {
+  border-bottom: 1px solid black;
+}

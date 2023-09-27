@@ -1,7 +1,9 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { Link } from "react-router-dom";
 import { Box, Button } from "@mui/material";
+import { collection, doc, getDoc } from "firebase/firestore";
+import { db } from "../../../firebaseConfig";
 
 const Cart = () => {
   const { cart, clearCart, deleteById, getTotalPrice } =
@@ -9,9 +11,19 @@ const Cart = () => {
 
   let total = getTotalPrice();
 
+  const [shipmentCost, setShipmentCost] = useState(0);
+
+  useEffect(() => {
+    let shipmentCollection = collection(db, "shipment");
+    let shipmentDoc = doc(shipmentCollection, "4Q6sTrgEruFytE2XV8rA");
+    getDoc(shipmentDoc).then((res) => {
+      setShipmentCost(res.data().cost);
+    });
+  }, []);
+
   return (
     <div>
-      <h1 className="bebas" style={{ paddingLeft: "20px" }}>
+      <h1 className="bebas" style={{ paddingLeft: "20px", paddingTop: "10px" }}>
         Carrito de compras
       </h1>
       <Box
@@ -23,26 +35,40 @@ const Cart = () => {
       >
         {cart.map((product) => {
           return (
-            <div
-              key={product.id}
-              style={{ width: "200px", border: "2px solid red" }}
-            >
+            <div key={product.id} className="card-producto">
               <img
                 src={product.image}
                 alt=""
-                style={{ height: "100px", width: "auto" }}
+                style={{
+                  height: "100px",
+                  width: "auto",
+                  boxShadow: "1px 1px 4px -2px rgba(0,0,0,0.75)",
+                }}
               />
-              <h6>{product.title}</h6>
-              <h6>Cantidad: {product.quantity}</h6>
-              <button onClick={() => deleteById(product.id)}>Eliminar</button>
+              <div className="card-text">
+                <div>
+                  <h6>{product.title}</h6>
+                  <h6>Cantidad: {product.quantity}</h6>
+                </div>
+                <button onClick={() => deleteById(product.id)}>Eliminar</button>
+              </div>
             </div>
           );
         })}
       </Box>
+      {cart.length !== 0 && (
+        <button onClick={clearCart} style={{ margin: "20px" }}>
+          Limpiar carrito
+        </button>
+      )}
       {cart.length > 0 && (
-        <div style={{ paddingLeft: "20px" }}>
-          <button onClick={clearCart}>Limpiar carrito</button>
-          <h3>El total a pagar es ${total}</h3>
+        <div className="montserrat summary">
+          <div className="summary-data">
+            <h3 style={{ paddingBottom: "10px" }}>Datos de la compra:</h3>
+            <h5>Total: ${total}</h5>
+            <h5>Costo de envío: ${shipmentCost}</h5>
+          </div>
+          <h4>El total a pagar es ${total + shipmentCost}</h4>
         </div>
       )}
 
@@ -57,9 +83,14 @@ const Cart = () => {
       {cart.length > 0 && (
         <Link
           to="/checkout"
-          style={{ color: "steelblue", paddingLeft: "20px" }}
+          style={{
+            color: "steelblue",
+            paddingLeft: "20px",
+          }}
         >
-          <Button variant="contained">Finalizar compra</Button>
+          <Button variant="contained" sx={{ marginBottom: "50px" }}>
+            Finalizar compra
+          </Button>
         </Link>
       )}
     </div>

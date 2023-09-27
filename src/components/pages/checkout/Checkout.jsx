@@ -136,7 +136,7 @@ const Checkout = () => {
           <Link to="/shop">Seguir comprando</Link>
           <ReactWhatsapp
             number="549-3571-57-3266"
-            message="Hello World!!!"
+            message="Hola María! Me gustaría hacer una consulta."
             element="button"
             className="whatsapp"
           >
