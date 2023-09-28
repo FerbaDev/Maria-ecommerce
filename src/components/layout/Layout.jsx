@@ -11,7 +11,7 @@ export const Layout = () => {
       <Box
         sx={{
           flexGrow: 1,
-          paddingTop: "30px",
+          paddingTop: "36px",
           width: "100%",
           minHeight: "90vh",
           background: "#F5D1E0",
