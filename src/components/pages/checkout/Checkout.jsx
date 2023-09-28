@@ -34,6 +34,7 @@ const Checkout = () => {
   });
   const [orderId, setOrderId] = useState(null);
   const [shipmentCost, setShipmentCost] = useState(0);
+  const [isClicked, setIsClicked] = useState(false);
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -97,6 +98,7 @@ const Checkout = () => {
   };
 
   const handleBuy = async () => {
+    setIsClicked(true);
     let order = {
       nombre: userData.nombre,
       apellido: userData.apellido,
@@ -163,13 +165,19 @@ const Checkout = () => {
               onChange={handleChange}
             />
           </div>
-          <Button
-            variant="contained"
-            onClick={handleBuy}
-            sx={{ marginBlock: "20px" }}
-          >
-            Seleccione metodo de pago
-          </Button>
+          {isClicked ? (
+            !preferenceId ? (
+              <h2>espere...</h2>
+            ) : null
+          ) : (
+            <Button
+              variant="contained"
+              onClick={handleBuy}
+              sx={{ marginBlock: "20px" }}
+            >
+              Seleccione metodo de pago
+            </Button>
+          )}
         </div>
       ) : (
         <>
