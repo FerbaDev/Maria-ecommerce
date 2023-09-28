@@ -35,7 +35,7 @@ const Cart = () => {
       >
         {cart.map((product) => {
           return (
-            <div key={product.id} className="card-producto">
+            <div key={product.id} className="card-producto montserrat">
               <img
                 src={product.image}
                 alt=""
@@ -47,8 +47,8 @@ const Cart = () => {
               />
               <div className="card-text">
                 <div>
-                  <h6>{product.title}</h6>
-                  <h6>Cantidad: {product.quantity}</h6>
+                  <h5>{product.title}</h5>
+                  <h5>Cantidad: {product.quantity}</h5>
                 </div>
                 <button onClick={() => deleteById(product.id)}>Eliminar</button>
               </div>
