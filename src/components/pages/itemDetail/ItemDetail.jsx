@@ -31,14 +31,14 @@ const ItemDetail = () => {
   };
 
   return (
-    <div style={{ paddingLeft: "20px" }}>
+    <div style={{ padding: "20px" }}>
       <h1 className="bebas">Detalle</h1>
 
       {product && (
         <div
           style={{
             padding: "20px",
-            backgroundColor: "pink",
+            backgroundColor: "#F2B0CF",
             width: "80%",
             borderRadius: "16px",
           }}
@@ -51,25 +51,33 @@ const ItemDetail = () => {
             style={{ width: "200px", paddingBlock: "10px" }}
             alt=""
           />
-          <p className="montserrat">Precio: ${product.unit_price}</p>
+          <p className="montserrat" style={{ fontWeight: "bold" }}>
+            Precio: ${product.unit_price}
+          </p>
         </div>
       )}
-      {quantity && <h6>Ya tienes {quantity} en el carrito</h6>}
+      {quantity && (
+        <h6 style={{ marginTop: "10px" }}>
+          Ya tienes {quantity} en el carrito
+        </h6>
+      )}
       {product?.stock === quantity && (
-        <h6>Ya tienes el maximo en el carrito</h6>
+        <h6>Ya tienes el máximo en el carrito</h6>
       )}
       <div style={{ display: "flex" }}>
         {isAdd ? (
-          <>
+          <div style={{ marginBlock: "10px" }}>
             <Link to={"/cart"}>
               <Button variant="contained" color="success">
                 Ir al carrito
               </Button>
             </Link>
             <Link to={"/shop"}>
-              <Button variant="contained">Seguir comprando</Button>
+              <Button variant="contained" color="secondary">
+                Seguir comprando
+              </Button>
             </Link>
-          </>
+          </div>
         ) : (
           <>
             <Button
@@ -78,6 +86,8 @@ const ItemDetail = () => {
                 setIsAdd(true);
               }}
               variant="contained"
+              color="secondary"
+              sx={{ marginBlock: "20px" }}
             >
               Agregar al carrito
             </Button>

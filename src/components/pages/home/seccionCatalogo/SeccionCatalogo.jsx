@@ -12,7 +12,9 @@ export const SeccionCatalogo = () => {
     >
       <h1 className="bebas">Catálogo</h1>
       <Link to={"/shop"}>
-        <Button variant="contained">Ver productos</Button>
+        <Button variant="contained" color="secondary">
+          Ver productos
+        </Button>
       </Link>
     </Box>
   );
