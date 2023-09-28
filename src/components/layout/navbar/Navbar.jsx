@@ -146,20 +146,6 @@ function Navbar(props) {
           {drawer}
         </Drawer>
       </Box>
-      {/* <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          py: 4,
-          width: "100%",
-          minHeight: "100vh",
-          px: 2,
-          background:
-            "linear-gradient(190deg, rgba(221,201,233,1) 8%, rgba(226,203,215,1) 38%, rgba(228,231,233,1) 86%);",
-        }}
-      >
-        <Toolbar />
-      </Box> */}
     </Box>
   );
 }

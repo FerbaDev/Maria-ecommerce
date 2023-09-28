@@ -1,24 +1,23 @@
-import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import ReactWhatsapp from "react-whatsapp";
 
 export const Footer = () => {
   return (
-    <div
-      style={{
-        minHeight: "100px",
-        backgroundColor: "#C43539",
-        display: "flex",
-        alignItems: "end",
-        justifyContent: "end",
-      }}
-    >
-      <h4 style={{ padding: "10px" }}>
-        <Link to={"https://talba-labs.vercel.app/"}>
-          <Typography sx={{ fontFamily: "monospace" }}>
-            Tienda creada por Talba Labs
-          </Typography>
+    <div className="footer">
+      <ReactWhatsapp
+        number="549-3571-57-3266"
+        message="Hola María! Me gustaría hacer una consulta."
+        element="div"
+      >
+        <WhatsAppIcon />
+      </ReactWhatsapp>
+      <p style={{ fontFamily: "monospace" }}>
+        Tienda creada por
+        <Link to={"https://talba-labs.vercel.app/"} className="talba">
+          <span style={{ fontFamily: "monospace" }}> Talba Labs</span>
         </Link>
-      </h4>
+      </p>
     </div>
   );
 };
