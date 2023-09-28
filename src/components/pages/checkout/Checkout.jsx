@@ -3,7 +3,7 @@ import { CartContext } from "../../../context/CartContext";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import axios from "axios";
 import { Button, TextField } from "@mui/material";
-import { AuthContext } from "../../../context/AuthContext";
+
 import { Link, useLocation } from "react-router-dom";
 import { db } from "../../../firebaseConfig";
 import {
@@ -19,12 +19,16 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 const Checkout = () => {
   const { cart, getTotalPrice, clearCart } = useContext(CartContext);
-  const { user } = useContext(AuthContext);
+
   initMercadoPago(import.meta.env.VITE_PUBLICKEY, {
     locale: "es-AR",
   });
   const [preferenceId, setPreferenceId] = useState(null);
   const [userData, setUserData] = useState({
+    nombre: "",
+    apellido: "",
+    dni: "",
+    localidad: "",
     cp: "",
     phone: "",
   });
@@ -94,11 +98,14 @@ const Checkout = () => {
 
   const handleBuy = async () => {
     let order = {
+      nombre: userData.nombre,
+      apellido: userData.apellido,
+      dni: userData.dni,
+      localidad: userData.localidad,
       cp: userData.cp,
       phone: userData.phone,
       items: cart,
       total: total + shipmentCost,
-      email: user.email,
     };
     localStorage.setItem("order", JSON.stringify(order));
     const id = await createPreference();
@@ -112,23 +119,58 @@ const Checkout = () => {
   };
 
   return (
-    <div>
+    <div style={{ padding: "20px" }}>
       {!orderId ? (
-        <>
-          <TextField
-            name="cp"
-            variant="outlined"
-            label="codigo postal"
-            onChange={handleChange}
-          />
-          <TextField
-            name="phone"
-            variant="outlined"
-            label="Telefono"
-            onChange={handleChange}
-          />
-          <Button onClick={handleBuy}>Seleccione metodo de pago</Button>
-        </>
+        <div>
+          <h2 className="bebas" style={{ fontSize: "1.8em" }}>
+            Complete los datos para el envío
+          </h2>
+          <div>
+            <TextField
+              name="nombre"
+              variant="outlined"
+              label="Nombre"
+              onChange={handleChange}
+            />
+            <TextField
+              name="apellido"
+              variant="outlined"
+              label="Apellido"
+              onChange={handleChange}
+            />
+            <TextField
+              name="dni"
+              variant="outlined"
+              label="DNI"
+              onChange={handleChange}
+            />
+            <TextField
+              name="localidad"
+              variant="outlined"
+              label="Localidad"
+              onChange={handleChange}
+            />
+            <TextField
+              name="cp"
+              variant="outlined"
+              label="Código postal"
+              onChange={handleChange}
+            />
+            <TextField
+              name="phone"
+              variant="outlined"
+              label="Teléfono"
+              onChange={handleChange}
+            />
+          </div>
+          <Button
+            variant="contained"
+            onClick={handleBuy}
+            sx={{ marginBlock: "20px" }}
+          >
+            Seleccione metodo de pago
+          </Button>
+        </div>
       ) : (
         <>
           <h4>El pago se realizó con éxito</h4>
