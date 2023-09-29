@@ -26,14 +26,14 @@ const Checkout = () => {
     locale: "es-AR",
   });
   const [preferenceId, setPreferenceId] = useState(null);
-  const [userData, setUserData] = useState({
-    nombre: "",
-    apellido: "",
-    dni: "",
-    localidad: "",
-    cp: "",
-    phone: "",
-  });
+  // const [userData, setUserData] = useState({
+  //   nombre: "",
+  //   apellido: "",
+  //   dni: "",
+  //   localidad: "",
+  //   cp: "",
+  //   phone: "",
+  // });
   const [orderId, setOrderId] = useState(null);
   const [shipmentCost, setShipmentCost] = useState(0);
   const [isClicked, setIsClicked] = useState(false);

@@ -1,6 +1,6 @@
 import Cart from "../components/pages/cart/Cart";
 import Checkout from "../components/pages/checkout/Checkout";
-import { FormCheckout } from "../components/pages/formCheckout/FormCheckout";
+
 import Home from "../components/pages/home/Home";
 
 import ItemDetail from "../components/pages/itemDetail/ItemDetail";
