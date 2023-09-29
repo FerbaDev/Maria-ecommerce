@@ -16,6 +16,8 @@ import {
 } from "firebase/firestore";
 import ReactWhatsapp from "react-whatsapp";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const Checkout = () => {
   const { cart, getTotalPrice, clearCart } = useContext(CartContext);
@@ -97,33 +99,66 @@ const Checkout = () => {
     }
   };
 
-  const handleBuy = async () => {
-    setIsClicked(true);
-    let order = {
-      nombre: userData.nombre,
-      apellido: userData.apellido,
-      dni: userData.dni,
-      localidad: userData.localidad,
-      cp: userData.cp,
-      phone: userData.phone,
-      items: cart,
-      total: total + shipmentCost,
-    };
-    localStorage.setItem("order", JSON.stringify(order));
-    const id = await createPreference();
-    if (id) {
-      setPreferenceId(id);
-    }
-  };
+  // const handleBuy = async () => {
+  //   setIsClicked(true);
+  //   let order = {
+  //     nombre: userData.nombre,
+  //     apellido: userData.apellido,
+  //     dni: userData.dni,
+  //     localidad: userData.localidad,
+  //     cp: userData.cp,
+  //     phone: userData.phone,
+  //     items: cart,
+  //     total: total + shipmentCost,
+  //   };
+  //   localStorage.setItem("order", JSON.stringify(order));
+  //   const id = await createPreference();
+  //   if (id) {
+  //     setPreferenceId(id);
+  //   }
+  // };
 
-  const handleChange = (e) => {
-    setUserData({ ...userData, [e.target.name]: e.target.value });
-  };
+  // const handleChange = (e) => {
+  //   setUserData({ ...userData, [e.target.name]: e.target.value });
+  // };
+
+  const { handleSubmit, handleChange, errors } = useFormik({
+    initialValues: {
+      nombre: "",
+      apellido: "",
+      dni: "",
+      localidad: "",
+      cp: "",
+      phone: "",
+    },
+    onSubmit: async (userData) => {
+      setIsClicked(true);
+      let order = {
+        nombre: userData.nombre,
+        apellido: userData.apellido,
+        dni: userData.dni,
+        localidad: userData.localidad,
+        cp: userData.cp,
+        phone: userData.phone,
+        items: cart,
+        total: total + shipmentCost,
+      };
+      localStorage.setItem("order", JSON.stringify(order));
+      const id = await createPreference();
+      if (id) {
+        setPreferenceId(id);
+      }
+    },
+    validateOnChange: false,
+    validationSchema: Yup.object({
+      nombre: Yup.string().required("Campo obligatorio"),
+    }),
+  });
 
   return (
     <div style={{ padding: "20px" }}>
       {!orderId ? (
-        <div>
+        <form onSubmit={handleSubmit}>
           <h2 className="bebas" style={{ fontSize: "1.8em" }}>
             Complete los datos para el envío
           </h2>
@@ -133,6 +168,8 @@ const Checkout = () => {
               variant="outlined"
               label="Nombre"
               onChange={handleChange}
+              error={errors.nombre ? true : false}
+              helperText={errors.nombre}
             />
             <TextField
               name="apellido"
@@ -172,13 +209,13 @@ const Checkout = () => {
           ) : (
             <Button
               variant="contained"
-              onClick={handleBuy}
+              type="submit"
               sx={{ marginBlock: "20px" }}
             >
               Seleccione metodo de pago
             </Button>
           )}
-        </div>
+        </form>
       ) : (
         <>
           <h4>El pago se realizó con éxito</h4>
