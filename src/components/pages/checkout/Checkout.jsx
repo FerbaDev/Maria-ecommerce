@@ -99,24 +99,25 @@ const Checkout = () => {
     }
   };
 
-  // const handleBuy = async () => {
-  //   setIsClicked(true);
-  //   let order = {
-  //     nombre: userData.nombre,
-  //     apellido: userData.apellido,
-  //     dni: userData.dni,
-  //     localidad: userData.localidad,
-  //     cp: userData.cp,
-  //     phone: userData.phone,
-  //     items: cart,
-  //     total: total + shipmentCost,
-  //   };
-  //   localStorage.setItem("order", JSON.stringify(order));
-  //   const id = await createPreference();
-  //   if (id) {
-  //     setPreferenceId(id);
-  //   }
-  // };
+  const handleBuy = async (userData) => {
+    setIsClicked(true);
+    let order = {
+      nombre: userData.nombre,
+      apellido: userData.apellido,
+      dni: userData.dni,
+      localidad: userData.localidad,
+      cp: userData.cp,
+      phone: userData.phone,
+      items: cart,
+      total: total + shipmentCost,
+    };
+    console.log(order);
+    localStorage.setItem("order", JSON.stringify(order));
+    const id = await createPreference();
+    if (id) {
+      setPreferenceId(id);
+    }
+  };
 
   // const handleChange = (e) => {
   //   setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -131,24 +132,7 @@ const Checkout = () => {
       cp: "",
       phone: "",
     },
-    onSubmit: async (userData) => {
-      setIsClicked(true);
-      let order = {
-        nombre: userData.nombre,
-        apellido: userData.apellido,
-        dni: userData.dni,
-        localidad: userData.localidad,
-        cp: userData.cp,
-        phone: userData.phone,
-        items: cart,
-        total: total + shipmentCost,
-      };
-      localStorage.setItem("order", JSON.stringify(order));
-      const id = await createPreference();
-      if (id) {
-        setPreferenceId(id);
-      }
-    },
+    onSubmit: handleBuy,
     validateOnChange: false,
     validationSchema: Yup.object({
       nombre: Yup.string().required("Campo obligatorio"),
@@ -158,11 +142,11 @@ const Checkout = () => {
   return (
     <div style={{ padding: "20px" }}>
       {!orderId ? (
-        <form onSubmit={handleSubmit}>
+        <div>
           <h2 className="bebas" style={{ fontSize: "1.8em" }}>
             Complete los datos para el envío
           </h2>
-          <div>
+          <form onSubmit={handleSubmit}>
             <TextField
               name="nombre"
               variant="outlined"
@@ -201,21 +185,22 @@ const Checkout = () => {
               label="Teléfono"
               onChange={handleChange}
             />
-          </div>
-          {isClicked ? (
-            !preferenceId ? (
-              <h2>espere...</h2>
-            ) : null
-          ) : (
-            <Button
-              variant="contained"
-              type="submit"
-              sx={{ marginBlock: "20px" }}
-            >
-              Seleccione metodo de pago
-            </Button>
-          )}
-        </form>
+            {isClicked ? (
+              !preferenceId ? (
+                <h2>espere...</h2>
+              ) : null
+            ) : (
+              <Button
+                variant="contained"
+                // onClick={handleBuy}
+                sx={{ marginBlock: "20px" }}
+                type="submit"
+              >
+                Seleccione metodo de pago
+              </Button>
+            )}
+          </form>
+        </div>
       ) : (
         <>
           <h4>El pago se realizó con éxito</h4>
