@@ -135,7 +135,9 @@ const Checkout = () => {
     onSubmit: handleBuy,
     validateOnChange: false,
     validationSchema: Yup.object({
-      nombre: Yup.string().required("Campo obligatorio"),
+      nombre: Yup.string()
+        .required("Campo obligatorio")
+        .min(3, "Ingrese un nombre válido"),
     }),
   });
 

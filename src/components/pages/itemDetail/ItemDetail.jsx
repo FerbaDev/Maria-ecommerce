@@ -2,7 +2,15 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { db } from "../../../firebaseConfig";
 import { getDoc, collection, doc } from "firebase/firestore";
-import { Button } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+} from "@mui/material";
 import { CartContext } from "../../../context/CartContext";
 
 const ItemDetail = () => {
@@ -35,36 +43,96 @@ const ItemDetail = () => {
       <h1 className="bebas">Detalle</h1>
 
       {product && (
-        <div
-          style={{
-            padding: "20px",
-            backgroundColor: "#F2B0CF",
-            width: "80%",
-            borderRadius: "16px",
-          }}
-        >
-          <h2 className="montserrat" style={{ textDecoration: "underline" }}>
-            {product.title}
-          </h2>
-          <img
-            src={product.image}
-            style={{ width: "200px", paddingBlock: "10px" }}
-            alt=""
-          />
-          <p className="montserrat" style={{ fontWeight: "bold" }}>
-            Precio: ${product.unit_price}
-          </p>
-        </div>
+        // <div
+        //   style={{
+        //     padding: "20px",
+        //     backgroundColor: "#F2B0CF",
+        //     width: "80%",
+        //     borderRadius: "16px",
+        //   }}
+        // >
+        //   <h2 className="montserrat" style={{ textDecoration: "underline" }}>
+        //     {product.title}
+        //   </h2>
+        //   <img
+        //     src={product.image}
+        //     style={{ width: "200px", paddingBlock: "10px" }}
+        //     alt=""
+        //   />
+        //   <p className="montserrat" style={{ fontWeight: "bold" }}>
+        //     Precio: ${product.unit_price}
+        //   </p>
+        //   <p className="montserrat">Descripcion: {product.description}</p>
+        // </div>
+        <Grid item xs={12} sm={6} md={4}>
+          <Card
+            sx={{ height: "100%", display: "flex", flexDirection: "column" }}
+          >
+            <CardMedia
+              component="div"
+              sx={{
+                // 16:9
+                pt: "56.25%",
+              }}
+              image={product.image}
+            />
+            <CardContent sx={{ flexGrow: 1 }}>
+              <Typography gutterBottom variant="h5" component="h2">
+                {product.title}
+              </Typography>
+              <Typography>{product.description}</Typography>
+              <Typography>Precio: ${product.unit_price}</Typography>
+              {quantity && (
+                <Typography sx={{ marginTop: "10px" }}>
+                  Ya tienes {quantity} en el carrito
+                </Typography>
+              )}
+              {product?.stock === quantity && (
+                <h6>Ya tienes el máximo en el carrito</h6>
+              )}
+            </CardContent>
+            <CardActions>
+              {isAdd ? (
+                <div style={{ marginBlock: "10px" }}>
+                  <Link to={"/cart"}>
+                    <Button size="small" color="success">
+                      Ir al carrito
+                    </Button>
+                  </Link>
+                  <Link to={"/shop"}>
+                    <Button size="small" color="secondary">
+                      Seguir comprando
+                    </Button>
+                  </Link>
+                </div>
+              ) : (
+                <>
+                  <Button
+                    onClick={(quantity) => {
+                      onAdd(quantity);
+                      setIsAdd(true);
+                    }}
+                    size="small"
+                    color="secondary"
+                    sx={{ marginBlock: "20px" }}
+                  >
+                    Agregar al carrito
+                  </Button>
+                </>
+              )}
+            </CardActions>
+          </Card>
+        </Grid>
       )}
-      {quantity && (
+      {/* {quantity && (
         <h6 style={{ marginTop: "10px" }}>
           Ya tienes {quantity} en el carrito
         </h6>
-      )}
-      {product?.stock === quantity && (
+      )} */}
+      {/* {product?.stock === quantity && (
         <h6>Ya tienes el máximo en el carrito</h6>
-      )}
-      <div style={{ display: "flex" }}>
+      )} */}
+      {/* <div style={{ display: "flex" }}>
         {isAdd ? (
           <div style={{ marginBlock: "10px" }}>
             <Link to={"/cart"}>
@@ -93,7 +161,7 @@ const ItemDetail = () => {
             </Button>
           </>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };
