@@ -22,7 +22,7 @@ export const OrdersList = ({ orders, setIsChange }) => {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell align="left">email</TableCell>
+              <TableCell align="left">Nombre completo</TableCell>
               <TableCell align="left">telefono</TableCell>
               <TableCell align="left">item</TableCell>
               <TableCell align="left">total</TableCell>
@@ -37,15 +37,21 @@ export const OrdersList = ({ orders, setIsChange }) => {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row" align="left">
-                  {order.email}
+                  {order.nombre} {order.apellido}
                 </TableCell>
                 <TableCell component="th" scope="row" align="left">
                   {order.phone}
                 </TableCell>
                 <TableCell component="th" scope="row" align="left">
-                  {order.items.map((item) => (
-                    <h4 key={item.id}>{item.title}</h4>
-                  ))}
+                  {
+                    <ul>
+                      {order.items.map((item) => (
+                        <li key={item.id}>
+                          <strong>{item.title}</strong>
+                        </li>
+                      ))}
+                    </ul>
+                  }
                 </TableCell>
                 <TableCell component="th" scope="row" align="left">
                   {order.total}

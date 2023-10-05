@@ -24,7 +24,6 @@ const AppRouter = () => {
           <Route key={id} path={path} element={<Element />} />
         ))}
       </Route>
-
       {/* PARA LOS USUARIOS ADMIN */}
       <Route element={<ProtectedAdmin />}>
         <Route element={<Layout />}>
@@ -32,16 +31,12 @@ const AppRouter = () => {
           <Route path="/ordenes" element={<Ordenes />} />
         </Route>
       </Route>
-
       {/* Login */}
       <Route path="/login" element={<Login />} />
-
-      {/* register 
+      {/* register
       <Route path="/register" element={<Register />} /> */}
-
       {/* forgot password  */}
       <Route path="/forgot-password" element={<ForgotPassword />} />
-
       <Route path="*" element={<h1>Not found</h1>} />
     </Routes>
   );
