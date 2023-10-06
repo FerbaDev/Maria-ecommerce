@@ -7,7 +7,10 @@ import {
   Button,
   ButtonGroup,
   CircularProgress,
-  Typography,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
 } from "@mui/material";
 
 import { ItemList } from "./ItemList";
@@ -18,7 +21,12 @@ import { menuMarcas } from "../../../router/menuMarcas";
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
-  const { categoryName, brandName } = useParams();
+  const [talleSeleccionado, setTalleSeleccionado] = useState("");
+
+  const { categoryName, brandName, talleSelected } = useParams();
+  const handleChange = (event) => {
+    setTalleSeleccionado(event.target.value);
+  };
 
   useEffect(() => {
     let itemsCollection = collection(db, "products");
@@ -29,6 +37,8 @@ const ItemListContainer = () => {
       consulta = query(itemsCollection, where("category", "==", categoryName));
     } else if (brandName) {
       consulta = query(itemsCollection, where("marca", "==", brandName));
+    } else if (talleSelected) {
+      consulta = query(itemsCollection, where("talle", "==", talleSelected));
     } else {
       consulta = itemsCollection;
     }
@@ -42,7 +52,7 @@ const ItemListContainer = () => {
         setProducts(newArray);
       })
       .catch((err) => console.log(err));
-  }, [categoryName, brandName]);
+  }, [categoryName, brandName, talleSelected]);
 
   if (products.length === 0) {
     return (
@@ -87,6 +97,34 @@ const ItemListContainer = () => {
             </Button>
           ))}
         </ButtonGroup>
+      </Box>
+      <Box sx={{ margin: "20px" }}>
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Talle</InputLabel>
+
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={talleSeleccionado}
+              label="Talle"
+              onChange={handleChange}
+            >
+              <MenuItem value={"todos"}>
+                <Link to={"/shop"}>Todos</Link>
+              </MenuItem>
+              <MenuItem value={38}>
+                <Link to={"/talle/38"}>38</Link>
+              </MenuItem>
+              <MenuItem value={39}>
+                <Link to={"/talle/39"}>39</Link>
+              </MenuItem>
+              <MenuItem value={40}>
+                <Link to={"/talle/40"}>40</Link>
+              </MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
       </Box>
       <ItemList products={products} />
     </Box>

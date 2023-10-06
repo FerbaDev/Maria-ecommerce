@@ -54,4 +54,9 @@ export const routes = [
     path: "/marca/:brandName",
     Element: ItemListContainer,
   },
+  {
+    id: "talle",
+    path: "/talle/:talleSelected",
+    Element: ItemListContainer,
+  },
 ];
