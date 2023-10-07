@@ -7,7 +7,6 @@ import {
   Card,
   CardActions,
   CardContent,
-  CardMedia,
   Grid,
   Typography,
 } from "@mui/material";
@@ -68,20 +67,19 @@ const ItemDetail = () => {
           <Card
             sx={{ height: "100%", display: "flex", flexDirection: "column" }}
           >
-            <CardMedia
-              component="div"
-              sx={{
-                // 16:9
-                pt: "56.25%",
-              }}
-              image={product.image}
+            <img
+              src={product.image}
+              alt=""
+              style={{ height: "200px", objectFit: "contain", padding: "4px" }}
             />
+
             <CardContent sx={{ flexGrow: 1 }}>
               <Typography gutterBottom variant="h5" component="h2">
                 {product.title}
               </Typography>
               <Typography>{product.description}</Typography>
               <Typography>Precio: ${product.unit_price}</Typography>
+              <Typography>Talle: {product.talle}</Typography>
               {quantity && (
                 <Typography sx={{ marginTop: "10px" }}>
                   Ya tienes {quantity} en el carrito
@@ -114,6 +112,7 @@ const ItemDetail = () => {
                     }}
                     size="small"
                     color="secondary"
+                    variant="contained"
                     sx={{ marginBlock: "20px" }}
                   >
                     Agregar al carrito
@@ -122,6 +121,11 @@ const ItemDetail = () => {
               )}
             </CardActions>
           </Card>
+          <Link to={"/shop"}>
+            <Button size="small" color="secondary">
+              Seguir comprando
+            </Button>
+          </Link>
         </Grid>
       )}
       {/* {quantity && (

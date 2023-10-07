@@ -29,6 +29,7 @@ export const ItemCard = ({ product }) => {
           >
             <h4 className="montserrat">{product.title}</h4>
             <h4 className="montserrat">Precio: ${product.unit_price}</h4>
+            <h4 className="montserrat">Talle: {product.talle}</h4>
             <h4 className="montserrat">Stock: {product.stock}</h4>
           </Box>
           <Link to={`/itemDetail/${product.id}`}>
