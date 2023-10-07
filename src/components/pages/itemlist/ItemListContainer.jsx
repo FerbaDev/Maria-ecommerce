@@ -111,16 +111,24 @@ const ItemListContainer = () => {
               onChange={handleChange}
             >
               <MenuItem value={"todos"}>
-                <Link to={"/shop"}>Todos</Link>
+                <Link to={"/shop"} style={{ width: "100%" }}>
+                  Todos
+                </Link>
               </MenuItem>
               <MenuItem value={38}>
-                <Link to={"/talle/38"}>38</Link>
+                <Link to={"/talle/38"} style={{ width: "100%" }}>
+                  38
+                </Link>
               </MenuItem>
               <MenuItem value={39}>
-                <Link to={"/talle/39"}>39</Link>
+                <Link to={"/talle/39"} style={{ width: "100%" }}>
+                  39
+                </Link>
               </MenuItem>
               <MenuItem value={40}>
-                <Link to={"/talle/40"}>40</Link>
+                <Link to={"/talle/40"} style={{ width: "100%" }}>
+                  40
+                </Link>
               </MenuItem>
             </Select>
           </FormControl>
