@@ -1,8 +1,6 @@
 import Cart from "../components/pages/cart/Cart";
 import Checkout from "../components/pages/checkout/Checkout";
-
 import Home from "../components/pages/home/Home";
-
 import ItemDetail from "../components/pages/itemDetail/ItemDetail";
 import ItemListContainer from "../components/pages/itemlist/ItemListContainer";
 import { Ordenes } from "../components/pages/ordenes/Ordenes";

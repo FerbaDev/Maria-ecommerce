@@ -3,8 +3,7 @@ import { CartContext } from "../../../context/CartContext";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import axios from "axios";
 import { Button, TextField } from "@mui/material";
-
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { db } from "../../../firebaseConfig";
 import {
   addDoc,
@@ -14,10 +13,9 @@ import {
   serverTimestamp,
   getDoc,
 } from "firebase/firestore";
-import ReactWhatsapp from "react-whatsapp";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { CompraRealizada } from "./CompraRealizada";
 
 const Checkout = () => {
   const { cart, getTotalPrice, clearCart } = useContext(CartContext);
@@ -204,20 +202,7 @@ const Checkout = () => {
           </form>
         </div>
       ) : (
-        <>
-          <h4>El pago se realizó con éxito</h4>
-          <h4>Su número de compra es {orderId}</h4>
-          <Link to="/shop">Seguir comprando</Link>
-          <ReactWhatsapp
-            number="549-3571-57-3266"
-            message="Hola María! Me gustaría hacer una consulta."
-            element="button"
-            className="whatsapp"
-          >
-            <WhatsAppIcon />
-            Whatsapp
-          </ReactWhatsapp>
-        </>
+        <CompraRealizada order={orderId} />
       )}
 
       {preferenceId && (

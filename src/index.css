@@ -40,6 +40,7 @@
   align-items: center;
   gap: 10px;
   text-shadow: 2px 2px 4px #2bb741;
+  max-width: 50%;
 }
 
 button {
