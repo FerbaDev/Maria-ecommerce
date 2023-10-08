@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { db } from "../../../firebaseConfig";
 import { getDoc, collection, doc } from "firebase/firestore";
 import {
+  Box,
   Button,
   Card,
   CardActions,
@@ -11,6 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import { CartContext } from "../../../context/CartContext";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const ItemDetail = () => {
   const { id } = useParams();
@@ -42,27 +44,6 @@ const ItemDetail = () => {
       <h1 className="bebas">Detalle</h1>
 
       {product && (
-        // <div
-        //   style={{
-        //     padding: "20px",
-        //     backgroundColor: "#F2B0CF",
-        //     width: "80%",
-        //     borderRadius: "16px",
-        //   }}
-        // >
-        //   <h2 className="montserrat" style={{ textDecoration: "underline" }}>
-        //     {product.title}
-        //   </h2>
-        //   <img
-        //     src={product.image}
-        //     style={{ width: "200px", paddingBlock: "10px" }}
-        //     alt=""
-        //   />
-        //   <p className="montserrat" style={{ fontWeight: "bold" }}>
-        //     Precio: ${product.unit_price}
-        //   </p>
-        //   <p className="montserrat">Descripcion: {product.description}</p>
-        // </div>
         <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{ height: "100%", display: "flex", flexDirection: "column" }}
@@ -81,7 +62,15 @@ const ItemDetail = () => {
               <Typography>Precio: ${product.unit_price}</Typography>
               <Typography>Talle: {product.talle}</Typography>
               {quantity && (
-                <Typography sx={{ marginTop: "10px" }}>
+                <Typography
+                  sx={{
+                    marginTop: "10px",
+                    backgroundColor: "rgba(255, 44, 255, 0.2)",
+                    padding: "4px",
+                    borderRadius: "2px",
+                    textAlign: "center",
+                  }}
+                >
                   Ya tienes {quantity} en el carrito
                 </Typography>
               )}
@@ -104,7 +93,15 @@ const ItemDetail = () => {
                   </Link>
                 </div>
               ) : (
-                <>
+                <Box
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    paddingInline: "5px",
+                  }}
+                >
                   <Button
                     onClick={(quantity) => {
                       onAdd(quantity);
@@ -117,15 +114,13 @@ const ItemDetail = () => {
                   >
                     Agregar al carrito
                   </Button>
-                </>
+                  <Link to={-1}>
+                    <ArrowBackIcon />
+                  </Link>
+                </Box>
               )}
             </CardActions>
           </Card>
-          <Link to={"/shop"}>
-            <Button size="small" color="secondary">
-              Seguir comprando
-            </Button>
-          </Link>
         </Grid>
       )}
       {/* {quantity && (
