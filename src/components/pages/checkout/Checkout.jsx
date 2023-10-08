@@ -134,8 +134,31 @@ const Checkout = () => {
     validateOnChange: false,
     validationSchema: Yup.object({
       nombre: Yup.string()
+        .typeError("Ingrese un nombre válido")
         .required("Campo obligatorio")
         .min(3, "Ingrese un nombre válido"),
+      apellido: Yup.string()
+        .typeError("Ingrese un apellido válido")
+        .required("Campo obligatorio")
+        .min(2, "Ingrese información válida"),
+      dni: Yup.number()
+        .typeError("escriba un número")
+
+        .positive()
+        .integer()
+
+        .min(7, "Ingrese un dni válido")
+        .max(8, "Ingrese un dni válido")
+        .required("Campo obligatorio"),
+      localidad: Yup.string().required("Campo obligatorio"),
+      cp: Yup.number()
+        .typeError("ingrese un CP válido")
+        .required("Campo obligatorio")
+        .min(4, "Ingrese un CP válido"),
+      phone: Yup.number()
+        .typeError("Ingrese un teléfono válido")
+        .required("Campo obligatorio")
+        .min(10, "Ingrese un teléfono válido"),
     }),
   });
 
@@ -160,30 +183,40 @@ const Checkout = () => {
               variant="outlined"
               label="Apellido"
               onChange={handleChange}
+              error={errors.apellido ? true : false}
+              helperText={errors.apellido}
             />
             <TextField
               name="dni"
               variant="outlined"
               label="DNI"
               onChange={handleChange}
+              error={errors.dni ? true : false}
+              helperText={errors.dni}
             />
             <TextField
               name="localidad"
               variant="outlined"
               label="Localidad"
               onChange={handleChange}
+              error={errors.localidad ? true : false}
+              helperText={errors.localidad}
             />
             <TextField
               name="cp"
               variant="outlined"
               label="Código postal"
               onChange={handleChange}
+              error={errors.cp ? true : false}
+              helperText={errors.cp}
             />
             <TextField
               name="phone"
               variant="outlined"
               label="Teléfono"
               onChange={handleChange}
+              error={errors.phone ? true : false}
+              helperText={errors.phone}
             />
             {isClicked ? (
               !preferenceId ? (
