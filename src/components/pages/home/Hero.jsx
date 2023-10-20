@@ -8,7 +8,7 @@ export const Hero = () => {
         height: { xs: "95vh", md: "100vh", lg: "100vh" },
         width: "100%",
         backgroundImage: `url("https://justaosadia.com/cdn/shop/files/JST15064.png?v=1692981099&width=800")`,
-        backgroundPosition: "center",
+        backgroundPosition: "50% 40%",
         backgroundRepeat: "no-repeat",
         display: "flex",
         flexDirection: "column",

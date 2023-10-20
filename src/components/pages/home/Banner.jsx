@@ -15,7 +15,10 @@ export const Banner = () => {
     >
       <Box
         className="bebas"
-        sx={{ fontSize: { xs: "40px", md: "50px", lg: "65px" } }}
+        sx={{
+          fontSize: { xs: "35px", md: "50px", lg: "65px" },
+          padding: "20px",
+        }}
       >
         Calidad que se siente bien
       </Box>
