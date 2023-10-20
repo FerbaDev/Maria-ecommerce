@@ -16,7 +16,7 @@ export const Trayectoria = () => {
       <Card sx={{ maxWidth: "100%" }}>
         <CardMedia
           sx={{ height: 250 }}
-          image="https://firebasestorage.googleapis.com/v0/b/maria-shoes-app.appspot.com/o/trayectoria.jpg?alt=media&token=40ebc04b-9806-4aff-bc9e-2b0b368ab849"
+          image="https://firebasestorage.googleapis.com/v0/b/maria-shoes-app.appspot.com/o/trayectoria.jpeg?alt=media&token=b24182fe-3439-403e-9405-02cef044b243&_gl=1*1ijeg1d*_ga*ODUyNzA4NDA5LjE2ODgwMDA1NzM.*_ga_CW55HF8NVT*MTY5Nzc3NTIzOC42NS4xLjE2OTc3NzY0MjguMTQuMC4w"
           title="Maria y Francois"
         />
         <CardContent>
