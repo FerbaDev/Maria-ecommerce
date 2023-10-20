@@ -14,8 +14,8 @@ export const Layout = () => {
           paddingTop: "36px",
           width: "100%",
           minHeight: "90vh",
-          background: "#F5D1E0",
         }}
+        className="background"
       >
         <Outlet />
         <Link to={"https://www.instagram.com/mariashoesclothes/"}>

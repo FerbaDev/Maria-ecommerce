@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <Box
       sx={{
-        height: "95vh",
+        height: { xs: "95vh", md: "100vh", lg: "100vh" },
         width: "100%",
         backgroundImage: `url("https://justaosadia.com/cdn/shop/files/JST15064.png?v=1692981099&width=800")`,
         backgroundPosition: "center",
@@ -14,6 +14,7 @@ export const Hero = () => {
         flexDirection: "column",
         justifyContent: "space-evenly",
         alignItems: "center",
+        marginTop: { lg: "8px" },
       }}
     >
       <h1
@@ -22,7 +23,8 @@ export const Hero = () => {
           fontSize: "3.5em",
           textAlign: "center",
           backgroundColor: "rgba(135, 4, 71, 0.3)",
-          width: "100%",
+          width: "auto",
+          paddingInline: "20px",
         }}
         className="bebas"
       >
