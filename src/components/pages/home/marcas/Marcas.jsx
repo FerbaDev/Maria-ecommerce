@@ -18,6 +18,7 @@ export const Marcas = () => {
           display: "flex",
           gap: "1em",
           flexDirection: { xs: "column", sm: "column", md: "row" },
+          justifyContent: "center",
 
           alignItems: "center",
         }}

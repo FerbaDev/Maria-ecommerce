@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export const CardMarcas = ({ nombre, descripcion, img, path }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, height: "232px" }}>
       <Link to={path}>
         <CardActionArea>
           <CardMedia
