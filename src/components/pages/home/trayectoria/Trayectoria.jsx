@@ -13,13 +13,22 @@ export const Trayectoria = () => {
         backgroundColor: "#F2B0CF",
       }}
     >
-      <Card sx={{ maxWidth: "100%", display: "flex", flexWrap: "wrap" }}>
+      <Card
+        sx={{
+          maxWidth: "100%",
+          display: "flex",
+          flexWrap: "wrap",
+          flexDirection: { xs: "column", sm: "", md: "", lg: "row" },
+          alignItems: "center",
+          justifyContent: "space-evenly",
+        }}
+      >
         <CardMedia
-          sx={{ height: "250px", width: { xs: "100%", lg: "250px" } }}
+          sx={{ height: "300px", width: { xs: "100%", lg: "250px" } }}
           image="https://firebasestorage.googleapis.com/v0/b/maria-shoes-app.appspot.com/o/trayectoria.jpeg?alt=media&token=b24182fe-3439-403e-9405-02cef044b243&_gl=1*1ijeg1d*_ga*ODUyNzA4NDA5LjE2ODgwMDA1NzM.*_ga_CW55HF8NVT*MTY5Nzc3NTIzOC42NS4xLjE2OTc3NzY0MjguMTQuMC4w"
           title="Maria y Francois"
         />
-        <CardContent>
+        <CardContent sx={{ width: { xs: "100%", sm: "", md: "", lg: "70%" } }}>
           <Typography
             gutterBottom
             variant="h4"
