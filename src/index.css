@@ -94,7 +94,7 @@ button:hover {
   justify-content: space-between;
   padding-inline: 20px;
   color: whitesmoke;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 .talba {
   text-shadow: 1px 3px 3px #000000;
@@ -102,4 +102,7 @@ button:hover {
 }
 .talba:hover {
   color: #25d366;
+}
+.cursor-manito {
+  cursor: pointer;
 }
