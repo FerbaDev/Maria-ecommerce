@@ -5,16 +5,17 @@ export const Hero = () => {
   return (
     <Box
       sx={{
-        height: { xs: "95vh", md: "100vh", lg: "100vh" },
+        height: { xs: "95vh", md: "100vh", lg: "92vh" },
         width: "100%",
         backgroundImage: `url("https://justaosadia.com/cdn/shop/files/JST15064.png?v=1692981099&width=800")`,
         backgroundPosition: "50% 40%",
         backgroundRepeat: "no-repeat",
+        backgroundSize: { lg: "contain" },
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-evenly",
         alignItems: "center",
-        marginTop: { lg: "8px" },
+        // marginTop: { lg: "8px" },
       }}
     >
       <h1
