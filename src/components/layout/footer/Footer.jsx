@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <div className="footer">
       <ReactWhatsapp
-        number="549-3571-57-3266"
+        number="549-3571-52-1084"
         message="Hola María! Me gustaría hacer una consulta."
         element="div"
       >
