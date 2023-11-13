@@ -3,15 +3,17 @@ import { ItemCard } from "./ItemCard";
 
 export const ItemList = ({ products }) => {
   return (
-    <div>
+
       <Container
         sx={{
+          maxWidth: "100%",
           paddingBlock: "20px",
           display: "flex",
-          justifyContent: "center",
           flexDirection: { xs: "column", sm: "column", md: "row" },
-          gap: "1em",
+          gap: "1.5em",
           alignItems: "center",
+          justifyContent: "space-around",
+          flexWrap: "wrap"
         }}
       >
         {products.map((product) => {
@@ -19,6 +21,6 @@ export const ItemList = ({ products }) => {
         })}
       </Container>
 
-    </div>
+
   );
 };
