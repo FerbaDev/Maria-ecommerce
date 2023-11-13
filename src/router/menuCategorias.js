@@ -19,4 +19,9 @@ export const menuCategorias = [
     path: "/category/botas",
     title: "Botas",
   },
+  {
+    id: "sandalias",
+    path: "/category/sandalias",
+    title: "Sandalias",
+  },
 ];
