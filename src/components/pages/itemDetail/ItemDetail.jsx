@@ -40,13 +40,13 @@ const ItemDetail = () => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <Box sx={{ padding: "20px" }}>
       <h1 className="bebas">Detalle</h1>
 
       {product && (
         <Grid item xs={12} sm={6} md={4}>
           <Card
-            sx={{ height: "100%", display: "flex", flexDirection: "column" }}
+            sx={{ height: "100%", display: "flex", flexDirection: "column", width: {xs: "100%", sm: "100%", md: "70%", lg: "30%" } }}
           >
             <img
               src={product.image}
@@ -161,7 +161,7 @@ const ItemDetail = () => {
           </>
         )}
       </div> */}
-    </div>
+    </Box>
   );
 };
 

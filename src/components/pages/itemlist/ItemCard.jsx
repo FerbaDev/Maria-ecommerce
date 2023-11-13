@@ -9,7 +9,6 @@ export const ItemCard = ({ product }) => {
         sx={{
           minWidth: "345px",
           maxWidth: "500px",
-
           paddingBottom: "5px",
           borderRadius: "10px",
           display: "flex", flexDirection: "column", 
