@@ -23,8 +23,8 @@ export const Layout = () => {
             sx={{
               position: "fixed",
               right: "20px",
-              bottom: "20px",
-              height: "1.5em",
+              bottom: "40px",
+              height: "2em",
               width: "auto",
             }}
             className="instagram"

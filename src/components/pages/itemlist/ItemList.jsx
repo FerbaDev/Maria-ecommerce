@@ -6,12 +6,13 @@ export const ItemList = ({ products }) => {
     <div>
       <Container
         sx={{
+          maxWidth: "100%",
           paddingBlock: "20px",
           display: "flex",
-          justifyContent: "center",
-          flexDirection: { xs: "column", sm: "column", md: "row" },
-          gap: "1em",
+          flexDirection: { xs: "column", sm: "column", md: "row", lg: "row" },
+          gap: "1.5em",
           alignItems: "center",
+          flexWrap: "wrap",
         }}
       >
         {products.map((product) => {

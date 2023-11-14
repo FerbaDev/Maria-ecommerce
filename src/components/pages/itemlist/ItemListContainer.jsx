@@ -60,11 +60,16 @@ const ItemListContainer = () => {
         sx={{
           minHeight: "75vh",
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
         <CircularProgress />
+
+        <Button>
+          <Link to={-1}>Volver</Link>
+        </Button>
       </Box>
     );
   }

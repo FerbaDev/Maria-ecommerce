@@ -3,13 +3,15 @@ import { Link } from "react-router-dom";
 
 export const ItemCard = ({ product }) => {
   return (
-    <div>
-      <div
+  
+      <Box
         key={product.id}
-        style={{
-          maxWidth: "345px",
+        sx={{
+          minWidth: "345px",
+          maxWidth: "500px",
           paddingBottom: "5px",
           borderRadius: "10px",
+          display: "flex", flexDirection: "column", 
         }}
       >
         <img
@@ -38,7 +40,7 @@ export const ItemCard = ({ product }) => {
             </Button>
           </Link>
         </div>
-      </div>
-    </div>
+      </Box>
+    
   );
 };
