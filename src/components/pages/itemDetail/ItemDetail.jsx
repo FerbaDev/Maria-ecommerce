@@ -46,7 +46,12 @@ const ItemDetail = () => {
       {product && (
         <Grid item xs={12} sm={6} md={4}>
           <Card
-            sx={{ height: "100%", display: "flex", flexDirection: "column", width: {xs: "100%", sm: "100%", md: "70%", lg: "30%" } }}
+            sx={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              width: { xs: "100%", sm: "100%", md: "70%", lg: "30%" },
+            }}
           >
             <img
               src={product.image}
@@ -62,17 +67,19 @@ const ItemDetail = () => {
               <Typography>Precio: ${product.unit_price}</Typography>
               <Typography>Talle: {product.talle}</Typography>
               {quantity && (
-                <Typography
-                  sx={{
-                    marginTop: "10px",
-                    backgroundColor: "rgba(255, 44, 255, 0.2)",
-                    padding: "4px",
-                    borderRadius: "2px",
-                    textAlign: "center",
-                  }}
-                >
-                  Ya tienes {quantity} en el carrito
-                </Typography>
+                <Link to={"/cart"}>
+                  <Typography
+                    sx={{
+                      marginTop: "10px",
+                      backgroundColor: "rgba(255, 44, 255, 0.2)",
+                      padding: "4px",
+                      borderRadius: "2px",
+                      textAlign: "center",
+                    }}
+                  >
+                    Ya tienes {quantity} en el carrito
+                  </Typography>
+                </Link>
               )}
               {product?.stock === quantity && (
                 <h6>Ya tienes el máximo en el carrito</h6>
@@ -82,7 +89,7 @@ const ItemDetail = () => {
               {isAdd ? (
                 <div style={{ marginBlock: "10px" }}>
                   <Link to={"/cart"}>
-                    <Button size="small" color="success">
+                    <Button size="small" color="success" variant="contained">
                       Ir al carrito
                     </Button>
                   </Link>
