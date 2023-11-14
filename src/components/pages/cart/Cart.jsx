@@ -48,6 +48,7 @@ const Cart = () => {
               <div className="card-text">
                 <div>
                   <h5>{product.title}</h5>
+                  <h5>Talle: {product.talle}</h5>
                   <h5>Cantidad: {product.quantity}</h5>
                 </div>
                 <button onClick={() => deleteById(product.id)}>Eliminar</button>
