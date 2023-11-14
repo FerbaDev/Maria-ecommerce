@@ -1,10 +1,10 @@
-import { Box, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import { ItemCard } from "./ItemCard";
 
 export const ItemList = ({ products }) => {
   return (
     <div>
-      {/* <Container
+      <Container
         sx={{
           paddingBlock: "20px",
           display: "flex",
@@ -17,12 +17,7 @@ export const ItemList = ({ products }) => {
         {products.map((product) => {
           return <ItemCard key={product.id} product={product} />;
         })}
-      </Container> */}
-      <Box
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-      >
-        <h2>PROXIMAMENTE</h2>
-      </Box>
+      </Container>
     </div>
   );
 };
