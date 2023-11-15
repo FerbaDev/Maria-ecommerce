@@ -9,9 +9,11 @@ export const ItemCard = ({ product }) => {
         minWidth: "345px",
         maxWidth: { xs: "345px", sm: "345px", md: "500px", lg: "500px" },
         paddingBottom: "5px",
+        marginRight: "20px",
         borderRadius: "10px",
         display: "flex",
         flexDirection: "column",
+        backgroundColor: "red",
       }}
     >
       <img
