@@ -105,7 +105,7 @@ const ItemListContainer = () => {
       </Box>
       <Box sx={{ margin: "20px" }}>
         <Box sx={{ minWidth: 120 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth sx={{ backgroundColor: "whitesmoke" }}>
             <InputLabel id="demo-simple-select-label">Talle</InputLabel>
 
             <Select
