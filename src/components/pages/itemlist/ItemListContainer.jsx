@@ -60,11 +60,16 @@ const ItemListContainer = () => {
         sx={{
           minHeight: "75vh",
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
         <CircularProgress />
+
+        <Button>
+          <Link to={-1}>Volver</Link>
+        </Button>
       </Box>
     );
   }
@@ -100,7 +105,7 @@ const ItemListContainer = () => {
       </Box>
       <Box sx={{ margin: "20px" }}>
         <Box sx={{ minWidth: 120 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth sx={{ backgroundColor: "whitesmoke" }}>
             <InputLabel id="demo-simple-select-label">Talle</InputLabel>
 
             <Select

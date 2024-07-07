@@ -46,7 +46,7 @@ export const Footer = () => {
 
     <p style={{ fontFamily: "monospace" }}>
       Tienda creada por
-      <Link to={"https://talba-labs.vercel.app/"} className="talba">
+      <Link to={"https://talbalabs.com.ar/"} className="talba">
         <span style={{ fontFamily: "monospace", }}> Talba Labs</span>
       </Link>
     </p>

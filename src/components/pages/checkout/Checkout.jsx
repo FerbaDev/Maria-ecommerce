@@ -133,12 +133,9 @@ const Checkout = () => {
         .min(2, "Ingrese información válida"),
       dni: Yup.number()
         .typeError("escriba un número")
-
+        .min(2, "Ingrese información válida")
         .positive()
-        .integer()
 
-        .min(7, "Ingrese un dni válido")
-        .max(8, "Ingrese un dni válido")
         .required("Campo obligatorio"),
       localidad: Yup.string().required("Campo obligatorio"),
       cp: Yup.number()
@@ -149,6 +146,10 @@ const Checkout = () => {
         .typeError("Ingrese un teléfono válido")
         .required("Campo obligatorio")
         .min(10, "Ingrese un teléfono válido"),
+      email: Yup.string()
+        .typeError("Ingrese un email válido")
+        .required("Campo obligatorio")
+        .email("Ingrese un email válido"),
     }),
   });
 
@@ -207,6 +208,14 @@ const Checkout = () => {
               onChange={handleChange}
               error={errors.phone ? true : false}
               helperText={errors.phone}
+            />
+            <TextField
+              name="email"
+              variant="outlined"
+              label="Email"
+              onChange={handleChange}
+              error={errors.email ? true : false}
+              helperText={errors.email}
             />
             {isClicked ? (
               !preferenceId ? (

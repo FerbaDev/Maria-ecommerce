@@ -81,7 +81,7 @@ const ProductsForm = ({
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          gap: "20px",
+          gap: "10px",
         }}
       >
         <TextField
@@ -135,6 +135,11 @@ const ProductsForm = ({
         {file && !isLoading && (
           <Button variant="contained" type="submit">
             {productSelected ? "modificar" : "crear"}
+          </Button>
+        )}
+        {file ? null : (
+          <Button variant="contained" type="submit">
+            Crear
           </Button>
         )}
       </form>

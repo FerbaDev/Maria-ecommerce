@@ -47,20 +47,24 @@ const ProductsList = ({ products, setIsChange }) => {
 
   return (
     <div>
-      <Button variant="contained" onClick={() => handleOpen(null)}>
-        Agregar nuevo
+      <Button
+        variant="contained"
+        onClick={() => handleOpen(null)}
+        sx={{ marginBlock: "20px" }}
+      >
+        Agregar nuevo producto
       </Button>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell align="left">id</TableCell>
-              <TableCell align="left">titulo</TableCell>
-              <TableCell align="left">precio</TableCell>
-              <TableCell align="left">stock</TableCell>
-              <TableCell align="left">imagen</TableCell>
-              <TableCell align="left">categoria</TableCell>
-              <TableCell align="left">acciones</TableCell>
+              {/* <TableCell align="left">id</TableCell> */}
+              <TableCell align="left">Título</TableCell>
+              <TableCell align="left">Precio</TableCell>
+              <TableCell align="left">Stock</TableCell>
+              <TableCell align="left">Imagen</TableCell>
+              <TableCell align="left">Categoria</TableCell>
+              <TableCell align="left">Acciones</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -69,9 +73,9 @@ const ProductsList = ({ products, setIsChange }) => {
                 key={product.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row" align="left">
+                {/* <TableCell component="th" scope="row" align="left">
                   {product.id}
-                </TableCell>
+                </TableCell> */}
                 <TableCell component="th" scope="row" align="left">
                   {product.title}
                 </TableCell>
