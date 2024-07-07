@@ -36,7 +36,7 @@ export const Footer = () => {
           Dirección:
         </Typography>
         <Typography variant="h6" component="h2" align="center">
-          Velez Sarsfield 116, Río Tercero, Córdoba.
+          General Paz 760, Río Tercero, Córdoba.
         </Typography>
       </Box>
     </Box>

@@ -24,14 +24,7 @@ const Checkout = () => {
     locale: "es-AR",
   });
   const [preferenceId, setPreferenceId] = useState(null);
-  // const [userData, setUserData] = useState({
-  //   nombre: "",
-  //   apellido: "",
-  //   dni: "",
-  //   localidad: "",
-  //   cp: "",
-  //   phone: "",
-  // });
+
   const [orderId, setOrderId] = useState(null);
   const [shipmentCost, setShipmentCost] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
@@ -117,9 +110,6 @@ const Checkout = () => {
     }
   };
 
-  // const handleChange = (e) => {
-  //   setUserData({ ...userData, [e.target.name]: e.target.value });
-  // };
 
   const { handleSubmit, handleChange, errors } = useFormik({
     initialValues: {
